@@ -13,6 +13,7 @@
 		A08335661C46EC0200283B93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08335651C46EC0200283B93 /* Images.xcassets */; };
 		A08335691C46EC0200283B93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08335671C46EC0200283B93 /* LaunchScreen.xib */; };
 		A08335751C46EC0200283B93 /* LanguageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08335741C46EC0200283B93 /* LanguageAppTests.swift */; };
+		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		A083356E1C46EC0200283B93 /* LanguageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08335731C46EC0200283B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08335741C46EC0200283B93 /* LanguageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageAppTests.swift; sourceTree = "<group>"; };
+		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				A083355E1C46EC0200283B93 /* AppDelegate.swift */,
 				A08335601C46EC0200283B93 /* ViewController.swift */,
 				A08335621C46EC0200283B93 /* Main.storyboard */,
+				A0C125981C46F8FB0025493D /* DictionaryViewController.swift */,
 				A08335651C46EC0200283B93 /* Images.xcassets */,
 				A08335671C46EC0200283B93 /* LaunchScreen.xib */,
 				A083355C1C46EC0200283B93 /* Supporting Files */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */,
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				A083357A1C46EC0200283B93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A083357B1C46EC0300283B93 /* Build configuration list for PBXNativeTarget "LanguageAppTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				A083357D1C46EC0300283B93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
