@@ -10,19 +10,29 @@ import UIKit
 
 class DictionaryViewController: UIViewController {
     
-    @IBOutlet weak var TextFieldEnglish: UITextField!
+    @IBOutlet weak var TextFieldTextEnglish: UITextField!
     @IBOutlet weak var TextFieldOjibwe: UITextField!
     @IBOutlet weak var LabelEnglish: UILabel!
     @IBOutlet weak var LabelOjibwe: UILabel!
     
-    @IBAction func SaveEnglish(sender: UIButton) {
-        if (self.TextFieldEnglish != nil) {
-            self.LabelEnglish.text = self.TextFieldEnglish.text;
-        }
+    //@IBAction func SaveEnglish(sender: UIButton) {
+//        if (self.TextFieldEnglish != nil) {
+//            self.LabelEnglish.text = self.TextFieldEnglish.text;
+//        }
+//    }
+    
+    @IBAction func TextFieldEnglish(sender: UITextField, forEvent event: UIEvent) {
+        
+        var text = self.TextFieldTextEnglish.text;
+        self.LabelEnglish.text = text;
     }
     
+    
+    
     @IBAction func SaveOjibwe(sender: UIButton) {
-        
+        if (self.TextFieldOjibwe != nil) {
+            self.LabelOjibwe.text = self.TextFieldOjibwe.text;
+        }
     }
     
     
