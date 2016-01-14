@@ -10,35 +10,29 @@ import UIKit
 
 class DictionaryViewController: UIViewController {
     
-    @IBOutlet weak var TextFieldTextEnglish: UITextField!
-    @IBOutlet weak var TextFieldOjibwe: UITextField!
     @IBOutlet weak var LabelEnglish: UILabel!
     @IBOutlet weak var LabelOjibwe: UILabel!
-    
-    //@IBAction func SaveEnglish(sender: UIButton) {
-//        if (self.TextFieldEnglish != nil) {
-//            self.LabelEnglish.text = self.TextFieldEnglish.text;
-//        }
-//    }
-    
-    @IBAction func TextFieldEnglish(sender: UITextField, forEvent event: UIEvent) {
+
+    @IBOutlet weak var OjibweTextFieldInput: UITextField!
+    @IBAction func EnglishTextFieldInputFcn(sender: UITextField) {
         
-        var text = self.TextFieldTextEnglish.text;
-        self.LabelEnglish.text = text;
     }
-    
     
     
     @IBAction func SaveOjibwe(sender: UIButton) {
-        if (self.TextFieldOjibwe != nil) {
-            self.LabelOjibwe.text = self.TextFieldOjibwe.text;
+        if (self.OjibweTextFieldInput != nil) {
+            self.LabelOjibwe.text = self.OjibweTextFieldInput.text;
         }
     }
     
+
+    @IBAction func SaveEnglish(sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NSLog("Hello");
     }
     
     override func didReceiveMemoryWarning() {
