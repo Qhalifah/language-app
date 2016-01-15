@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A06FF9141C4800AF009E45DC /* DictionaryStoredWords.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */; };
 		A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A083355E1C46EC0200283B93 /* AppDelegate.swift */; };
 		A08335611C46EC0200283B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08335601C46EC0200283B93 /* ViewController.swift */; };
 		A08335641C46EC0200283B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08335621C46EC0200283B93 /* Main.storyboard */; };
 		A08335661C46EC0200283B93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08335651C46EC0200283B93 /* Images.xcassets */; };
 		A08335691C46EC0200283B93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08335671C46EC0200283B93 /* LaunchScreen.xib */; };
 		A08335751C46EC0200283B93 /* LanguageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08335741C46EC0200283B93 /* LanguageAppTests.swift */; };
+		A08D2CDA1C49AA36006C11A0 /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */; };
+		A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */; };
+		A08D2CDE1C49AA4F006C11A0 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */; };
 		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DictionaryStoredWords.plist; sourceTree = "<group>"; };
 		A08335591C46EC0200283B93 /* LanguageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A083355D1C46EC0200283B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A083355E1C46EC0200283B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,9 @@
 		A083356E1C46EC0200283B93 /* LanguageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08335731C46EC0200283B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08335741C46EC0200283B93 /* LanguageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageAppTests.swift; sourceTree = "<group>"; };
+		A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
+		A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjugationViewController.swift; sourceTree = "<group>"; };
+		A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,9 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				A083355E1C46EC0200283B93 /* AppDelegate.swift */,
-				A08335601C46EC0200283B93 /* ViewController.swift */,
 				A08335621C46EC0200283B93 /* Main.storyboard */,
+				A08335601C46EC0200283B93 /* ViewController.swift */,
 				A0C125981C46F8FB0025493D /* DictionaryViewController.swift */,
+				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
+				A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */,
+				A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */,
+				A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */,
 				A08335651C46EC0200283B93 /* Images.xcassets */,
 				A08335671C46EC0200283B93 /* LaunchScreen.xib */,
 				A083355C1C46EC0200283B93 /* Supporting Files */,
@@ -198,6 +210,7 @@
 				A08335641C46EC0200283B93 /* Main.storyboard in Resources */,
 				A08335691C46EC0200283B93 /* LaunchScreen.xib in Resources */,
 				A08335661C46EC0200283B93 /* Images.xcassets in Resources */,
+				A06FF9141C4800AF009E45DC /* DictionaryStoredWords.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08D2CDA1C49AA36006C11A0 /* QuizzesViewController.swift in Sources */,
 				A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */,
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
+				A08D2CDE1C49AA4F006C11A0 /* ChartsViewController.swift in Sources */,
+				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
