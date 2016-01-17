@@ -37,7 +37,3 @@ class DictionaryViewController: UIViewController {
 }
 
 
-
-class DictionaryWordEntry {
-    
-}

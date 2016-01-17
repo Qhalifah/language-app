@@ -17,6 +17,7 @@
 		A08D2CDA1C49AA36006C11A0 /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */; };
 		A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */; };
 		A08D2CDE1C49AA4F006C11A0 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */; };
+		A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */; };
 		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
 		A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjugationViewController.swift; sourceTree = "<group>"; };
 		A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OjibweEnglishDictionaryClass.swift; sourceTree = "<group>"; };
 		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				A08335621C46EC0200283B93 /* Main.storyboard */,
 				A08335601C46EC0200283B93 /* ViewController.swift */,
 				A0C125981C46F8FB0025493D /* DictionaryViewController.swift */,
+				A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */,
 				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
 				A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */,
 				A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */,
@@ -232,6 +235,7 @@
 				A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */,
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
 				A08D2CDE1C49AA4F006C11A0 /* ChartsViewController.swift in Sources */,
+				A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */,
 				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
 			);
