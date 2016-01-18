@@ -32,14 +32,7 @@ public class DictionaryWordEntry {
         
         path = String(stringInterpolationSegment: NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist"));
         var rawWordEntryArray = NSArray(contentsOfFile: "path");
-//        var aRawDiciontary: Dictionary <Dictionary>;
-//        for () { }
-        
-    
+        var aRawDiciontary: NSDictionary;
+      
     }
-    
-    
-    
-
-
 }
