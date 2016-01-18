@@ -9,8 +9,8 @@
 import UIKit
 
 class DictionaryViewController: UIViewController {
+
     
-   
     @IBOutlet weak var TextFieldInput: UITextField!
 
     @IBOutlet weak var LabelForSavedText: UILabel!
@@ -26,6 +26,8 @@ class DictionaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+            var newTestDictionaryObject = DictionaryWordEntry();
+        
     }
     
     override func didReceiveMemoryWarning() {
