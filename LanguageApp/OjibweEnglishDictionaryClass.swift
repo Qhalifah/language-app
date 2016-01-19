@@ -15,10 +15,9 @@ public class DictionaryWordEntry {
     var english: String = "";
     var ojibwe: String = "";
     var verb, noun, ii, ai, ta, ti, ani, inani: Bool
-    var path = "";
-    //var rawWordEntryArray: NSArray = [];
-    var theArrayDictionary = [];
     init () {
+        var theDictionary = OjibweEnglishDictionary(); 
+        
         english = "";
         ojibwe = "";
         verb = false;
@@ -30,9 +29,23 @@ public class DictionaryWordEntry {
         ani = false;
         inani = false;
         
-        path = String(stringInterpolationSegment: NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist"));
-        var rawWordEntryArray = NSArray(contentsOfFile: "path");
-        var aRawDiciontary: NSDictionary;
-      
     }
+}
+
+class OjibweEnglishDictionary {
+    var path = "";
+    var rawArray: NSMutableArray = [];
+    
+    init () {
+        path = NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist")!;
+   
+        if let rawWordEntryArray = NSArray(contentsOfFile: path) {
+        var aRawDiciontary: NSDictionary;
+        for aRawDiciontary in rawWordEntryArray {
+            self.rawArray.addObject(aRawDiciontary);
+            }
+        }
+    }
+    
+    
 }
