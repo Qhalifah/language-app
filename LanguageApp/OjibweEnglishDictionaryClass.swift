@@ -15,7 +15,7 @@ public class DictionaryWordEntry {
     var english: String = "";
     var ojibwe: String = "";
     var verb, noun, ii, ai, ta, ti, ani, inani: Bool
-    init () {
+    init (rawDict: OjibweEnglishDictionary) {
         var theDictionary = OjibweEnglishDictionary(); 
         
         english = "";
@@ -28,6 +28,7 @@ public class DictionaryWordEntry {
         ti = false;
         ani = false;
         inani = false;
+        
         
     }
 }
