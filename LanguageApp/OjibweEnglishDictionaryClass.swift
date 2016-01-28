@@ -12,41 +12,33 @@ import Foundation
 
 public class DictionaryWordEntry {
     // write init for Dictionary word entry
-    var english: String = "";
-    var ojibwe: String = "";
-    var verb, noun, ii, ai, ta, ti, ani, inani: Bool
-    init (rawDict: OjibweEnglishDictionary) {
-        var theDictionary = OjibweEnglishDictionary(); 
-        
-        english = "";
-        ojibwe = "";
-        verb = false;
-        noun = false;
-        ii = false;
-        ai = false;
-        ta = false;
-        ti = false;
-        ani = false;
-        inani = false;
-        
-        
+    var english: String = ""
+    var ojibwe: String = ""
+    var type: String = ""
+    var subtype: String = ""
+    init (aDictionary: Dictionary<String,String>) {
+        self.english = aDictionary["english"]!
+        self.ojibwe = aDictionary["ojibwe"]!
+        self.type = aDictionary["type"]!
+        self.subtype = aDictionary["subtype"]!
     }
 }
 
 class OjibweEnglishDictionary {
-    var path = "";
-    var rawArray: NSMutableArray = [];
-    
     init () {
-        path = NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist")!;
-   
-        if let rawWordEntryArray = NSArray(contentsOfFile: path) {
-        var aRawDiciontary: NSDictionary;
-        for aRawDiciontary in rawWordEntryArray {
-            self.rawArray.addObject(aRawDiciontary);
+        self = init(super)
+        var path = NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist")!;
+        var rawArray: Array<Dictionary <String, String>> = []
+        //    var rawArray: NSMutableArray = []
+        
+        if () {
+            var aRawDiciontary: Dictionary <String, String>
+            for aRawDiciontary in rawWordEntryArray {
+//                self.rawArray.addObject(aRawDiciontary);
+                var rawDict: Dictionary = aRawDiciontary
+                var aNewDict = DictionaryWordEntry(rawDict)
             }
-        }
+        
     }
-    
     
 }

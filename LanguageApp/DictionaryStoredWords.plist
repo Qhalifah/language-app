@@ -3,13 +3,13 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>English </key>
+		<key>english </key>
 		<string>bear</string>
-		<key>Ojibwe</key>
+		<key>ojibwe</key>
 		<string>makwa</string>
-		<key>Type</key>
+		<key>type</key>
 		<string>noun</string>
-		<key>Subtype</key>
+		<key>subtype</key>
 		<string>ani</string>
 	</dict>
 </array>
