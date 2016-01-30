@@ -39,8 +39,7 @@ public class DictionaryWordEntry {
 
 class OjibweEnglishDictionary {
     var rawMovableArray: NSArray = []
-    var usableDictionaryArray: Array<String> = []
-//    var pathArray: NSMutableArray
+    var usableDictionaryArray: Array<DictionaryWordEntry> = []
     init () {
         if let path = NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist") {
             rawMovableArray = NSArray(contentsOfFile: path)!
@@ -49,7 +48,9 @@ class OjibweEnglishDictionary {
         for aRawDiciontary in rawMovableArray {
             var rawDict: NSDictionary = aRawDiciontary as! NSDictionary
             var aNewDict = DictionaryWordEntry(aDictionary: rawDict as! [String:String])
-            self.usableDictionaryArray.append("Hello")
+            if aNewDict != nil {
+                self.usableDictionaryArray.append(aNewDict!)
+            }
         }
     }
     

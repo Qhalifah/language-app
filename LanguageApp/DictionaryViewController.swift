@@ -26,8 +26,13 @@ class DictionaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-            var newTestDictionaryObject = OjibweEnglishDictionary();
-    
+        var newTestDictionaryObject = OjibweEnglishDictionary();
+        var testDictionaryArray: Array = newTestDictionaryObject.usableDictionaryArray;
+        var yetAnotherArray: Array<AnyObject> = []
+        for i in testDictionaryArray {
+            yetAnotherArray.append(i)
+        }
+        var firstDictionary = yetAnotherArray[1] as! Dictionary<String,String>
     }
     
     override func didReceiveMemoryWarning() {
