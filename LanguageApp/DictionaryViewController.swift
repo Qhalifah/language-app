@@ -27,7 +27,7 @@ class DictionaryViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
             var newTestDictionaryObject = OjibweEnglishDictionary();
-        
+    
     }
     
     override func didReceiveMemoryWarning() {

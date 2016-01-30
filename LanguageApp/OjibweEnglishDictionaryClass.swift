@@ -25,16 +25,21 @@ public class DictionaryWordEntry {
 }
 
 class OjibweEnglishDictionary {
-    
+    var rawMovableArray: NSArray = []
+//    var pathArray: NSMutableArray
     init () {
-        var path = NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist")!;
-        var pathString = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: ni)
-//        var rawArray =    //[String:String] = []
-        var aRawDiciontary: Dictionary <String, String>
-        for aRawDiciontary in rawArray {
-            var rawDict: Dictionary = aRawDiciontary
-            var aNewDict = DictionaryWordEntry(aDictionary: rawDict)
+        if let path = NSBundle.mainBundle().pathForResource("DictionaryStoredWords", ofType: "plist") {
+            let rawArray = NSArray(contentsOfFile: path) 
+            self.rawMovableArray = rawArray!
         }
+        
+//        pathArray = NSMutableArray(contentsOfFile: path)!
+//        var rawArray =    //[String:String] = []
+//        var aRawDiciontary: Dictionary <String, String>
+//        for aRawDiciontary in rawArray {
+//            var rawDict: Dictionary = aRawDiciontary
+//            var aNewDict = DictionaryWordEntry(aDictionary: rawDict)
+        
     }
     
 }
