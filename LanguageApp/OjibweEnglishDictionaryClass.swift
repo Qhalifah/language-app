@@ -12,10 +12,10 @@ import Foundation
 
 public class DictionaryWordEntry {
     // write init for Dictionary word entry
-    var english: String = ""
-    var ojibwe: String = ""
-    var type: String = ""
-    var subtype: String = ""
+    var english: String? = ""
+    var ojibwe: String? = ""
+    var type: String? = ""
+    var subtype: String? = ""
     init (aDictionary: Dictionary<String,String>) {
         self.english = aDictionary["english"]!
         self.ojibwe = aDictionary["ojibwe"]!
@@ -32,14 +32,11 @@ class OjibweEnglishDictionary {
             let rawArray = NSArray(contentsOfFile: path) 
             self.rawMovableArray = rawArray!
         }
-        
-//        pathArray = NSMutableArray(contentsOfFile: path)!
-//        var rawArray =    //[String:String] = []
-//        var aRawDiciontary: Dictionary <String, String>
-//        for aRawDiciontary in rawArray {
-//            var rawDict: Dictionary = aRawDiciontary
-//            var aNewDict = DictionaryWordEntry(aDictionary: rawDict)
-        
+//        var aRawDiciontary: NSDictionary
+        for aRawDiciontary in rawMovableArray {
+            var rawDict: NSDictionary = aRawDiciontary as! NSDictionary
+            var aNewDict = DictionaryWordEntry(aDictionary: rawDict as! Dictionary<String, String>)
+        }
     }
     
 }

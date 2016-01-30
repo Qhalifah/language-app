@@ -3,6 +3,16 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>english</key>
+		<string>it is black</string>
+		<key>ojibwe</key>
+		<string>makade</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ii</string>
+	</dict>
+	<dict>
 		<key>english </key>
 		<string>bear</string>
 		<key>ojibwe</key>
