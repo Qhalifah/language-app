@@ -14,7 +14,9 @@ class DictionaryViewController: UIViewController {
     @IBOutlet weak var TextFieldInput: UITextField!
 
     @IBOutlet weak var LabelForSavedText: UILabel!
-    @IBOutlet weak var WordToFind: UITextField!
+    @IBOutlet weak var wordToFind: UITextField!
+    @IBOutlet weak var englishSearchButton: UIButton!
+    @IBOutlet weak var ojibweSearchButton: UIButton!
     
 
     @IBAction func SaveEnglish(sender: UIButton) {
@@ -22,13 +24,15 @@ class DictionaryViewController: UIViewController {
             self.LabelForSavedText.text = self.TextFieldInput.text;
         }
     }
+    var testDictionaryArray: Array<DictionaryWordEntry> = []
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         var newTestDictionaryObject = OjibweEnglishDictionary();
-        var testDictionaryArray: Array = newTestDictionaryObject.usableDictionaryArray;
+        testDictionaryArray = newTestDictionaryObject.usableDictionaryArray;
         
 //        var yetAnotherArray: Array<AnyObject> = []
 //        for i in testDictionaryArray {
@@ -42,10 +46,19 @@ class DictionaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func findDictionaryWordEntry(wordToFind:String) {
-        switch {
-            
+    func findDictionaryWordEntry(wordToFind:String, oOrE:String) {
+        
+        for i in testDictionaryArray {
+            switch oOrE {
+            case "english":
+                self.LabelForSavedText.text = "Switch logged English"
+            case "ojibwe":
+                self.LabelForSavedText.text = "Switch logged Ojibwe"
+            default:
+                self.LabelForSavedText.text = "Switch logged default"
+            }
         }
+        
     }
     
     
