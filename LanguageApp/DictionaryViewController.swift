@@ -15,8 +15,7 @@ class DictionaryViewController: UIViewController {
 
     @IBOutlet weak var LabelForSavedText: UILabel!
     @IBOutlet weak var wordToFind: UITextField!
-    @IBOutlet weak var englishSearchButton: UIButton!
-    @IBOutlet weak var ojibweSearchButton: UIButton!
+    @IBOutlet weak var englishSearchButtonButton: UIButton!
     
 
     @IBAction func SaveEnglish(sender: UIButton) {
@@ -26,6 +25,9 @@ class DictionaryViewController: UIViewController {
     }
     var testDictionaryArray: Array<DictionaryWordEntry> = []
     
+    @IBAction func englishSearchButton(sender: AnyObject) {
+        self.englishSearchButtonButton.setTitle("HI", forState: .Normal)
+    }
     
     override func viewDidLoad() {
         
@@ -38,6 +40,7 @@ class DictionaryViewController: UIViewController {
 //        for i in testDictionaryArray {
 //            yetAnotherArray.append(i)
 //        }
+        
         
     }
     
