@@ -14,6 +14,7 @@ class DictionaryViewController: UIViewController {
     @IBOutlet weak var TextFieldInput: UITextField!
 
     @IBOutlet weak var LabelForSavedText: UILabel!
+    @IBOutlet weak var WordToFind: UITextField!
     
 
     @IBAction func SaveEnglish(sender: UIButton) {
@@ -28,16 +29,23 @@ class DictionaryViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         var newTestDictionaryObject = OjibweEnglishDictionary();
         var testDictionaryArray: Array = newTestDictionaryObject.usableDictionaryArray;
-        var yetAnotherArray: Array<AnyObject> = []
-        for i in testDictionaryArray {
-            yetAnotherArray.append(i)
-        }
-        var firstDictionary = yetAnotherArray[1] as! Dictionary<String,String>
+        
+//        var yetAnotherArray: Array<AnyObject> = []
+//        for i in testDictionaryArray {
+//            yetAnotherArray.append(i)
+//        }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func findDictionaryWordEntry(wordToFind:String) {
+        switch {
+            
+        }
     }
     
     
