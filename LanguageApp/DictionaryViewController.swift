@@ -16,37 +16,41 @@ class DictionaryViewController: UIViewController {
     @IBOutlet weak var LabelForSavedText: UILabel!
     @IBOutlet weak var wordToFind: UITextField!
     @IBOutlet weak var englishSearchButtonButton: UIButton!
+    @IBOutlet weak var ojibweSearchButtonButton: UIButton!
     
-
-    @IBAction func SaveEnglish(sender: UIButton) {
-        if (self.TextFieldInput != nil) {
-            self.LabelForSavedText.text = self.TextFieldInput.text;
-        }
-    }
     var testDictionaryArray: Array<DictionaryWordEntry> = []
     
-    @IBAction func englishSearchButton(sender: AnyObject) {
-        self.englishSearchButtonButton.setTitle("HI", forState: .Normal)
-    }
-    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         var newTestDictionaryObject = OjibweEnglishDictionary();
         testDictionaryArray = newTestDictionaryObject.usableDictionaryArray;
         
+        self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
+        self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
 //        var yetAnotherArray: Array<AnyObject> = []
 //        for i in testDictionaryArray {
 //            yetAnotherArray.append(i)
 //        }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func SaveEnglish(sender: UIButton) {
+        if (self.TextFieldInput != nil) {
+            self.LabelForSavedText.text = self.TextFieldInput.text;
+        }
+    }
+    
+    @IBAction func englishSearchButton(sender: AnyObject) {
+        self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
+    }
+    
+    @IBAction func ojibweSearchButton(sender: AnyObject) {
+        self.ojibweSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
     }
     
     func findDictionaryWordEntry(wordToFind:String, oOrE:String) {
@@ -61,7 +65,6 @@ class DictionaryViewController: UIViewController {
                 self.LabelForSavedText.text = "Switch logged default"
             }
         }
-        
     }
     
     

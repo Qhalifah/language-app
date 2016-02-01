@@ -47,7 +47,7 @@
 		A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjugationViewController.swift; sourceTree = "<group>"; };
 		A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OjibweEnglishDictionaryClass.swift; sourceTree = "<group>"; };
-		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
