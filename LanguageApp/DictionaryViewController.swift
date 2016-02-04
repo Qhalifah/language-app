@@ -12,12 +12,12 @@ class DictionaryViewController: UIViewController {
 
     
     @IBOutlet weak var TextFieldInput: UITextField!
-
     @IBOutlet weak var LabelForSavedText: UILabel!
     @IBOutlet weak var wordToFind: UITextField!
     @IBOutlet weak var englishSearchButtonButton: UIButton!
     @IBOutlet weak var ojibweSearchButtonButton: UIButton!
-    
+    var englishOjibweButtonPseudoBool: String? = nil
+    //Need notes on this!!!!!
     var testDictionaryArray: Array<DictionaryWordEntry> = []
     
     override func viewDidLoad() {
@@ -46,13 +46,30 @@ class DictionaryViewController: UIViewController {
     }
     
     @IBAction func englishSearchButton(sender: AnyObject) {
-        self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
+        if self.englishOjibweButtonPseudoBool == nil {
+            self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
+            self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
+            self.englishOjibweButtonPseudoBool = "english"
+        }
+        else if self.englishOjibweButtonPseudoBool == "ojibwe" {
+            self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
+            self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
+            self.englishOjibweButtonPseudoBool = "english"
+        }
     }
     
     @IBAction func ojibweSearchButton(sender: AnyObject) {
-        self.ojibweSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
+        if self.englishOjibweButtonPseudoBool == nil || self.englishOjibweButtonPseudoBool == "english" {
+            self.ojibweSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
+            self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
+            self.englishOjibweButtonPseudoBool = "ojibwe"
+        }
+        
     }
     
+    @IBAction func searchInDictionaryButton(sender: AnyObject) {
+        findDictionaryWordEntry(self.wordToFind.text, oOrE: self.englishOjibweButtonPseudoBool!)
+    }
     func findDictionaryWordEntry(wordToFind:String, oOrE:String) {
         
         for i in testDictionaryArray {

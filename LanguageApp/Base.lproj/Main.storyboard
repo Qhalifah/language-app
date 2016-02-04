@@ -201,6 +201,15 @@
                                     <action selector="SaveEnglish:" destination="744-jG-ALa" eventType="touchUpInside" id="pSg-iU-lAu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-0t-zAs">
+                                <rect key="frame" x="16" y="330" width="62" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchInDictionaryButton:" destination="744-jG-ALa" eventType="touchUpInside" id="Xfn-oi-yPs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -210,6 +219,7 @@
                         <outlet property="TextFieldInput" destination="k2O-PC-a7Q" id="5wZ-sq-Kqo"/>
                         <outlet property="englishSearchButtonButton" destination="K9R-xv-H8U" id="fYZ-Yq-6Ji"/>
                         <outlet property="ojibweSearchButtonButton" destination="gJS-qq-yzg" id="JUu-dN-Kor"/>
+                        <outlet property="wordToFind" destination="WOD-Td-R2I" id="APD-fS-LK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kze-Tk-bDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
