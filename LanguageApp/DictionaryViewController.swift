@@ -46,12 +46,7 @@ class DictionaryViewController: UIViewController {
     }
     
     @IBAction func englishSearchButton(sender: AnyObject) {
-        if self.englishOjibweButtonPseudoBool == nil {
-            self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
-            self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
-            self.englishOjibweButtonPseudoBool = "english"
-        }
-        else if self.englishOjibweButtonPseudoBool == "ojibwe" {
+        if self.englishOjibweButtonPseudoBool == nil || self.englishOjibweButtonPseudoBool == "ojibwe" {
             self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
             self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
             self.englishOjibweButtonPseudoBool = "english"
