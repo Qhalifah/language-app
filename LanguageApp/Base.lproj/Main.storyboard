@@ -163,8 +163,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJS-qq-yzg">
-                                <rect key="frame" x="16" y="284" width="30" height="30"/>
-                                <state key="normal" title="○">
+                                <rect key="frame" x="16" y="280" width="30" height="30"/>
+                                <state key="normal" title="○                  ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -172,26 +172,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxU-jU-qzU">
-                                <rect key="frame" x="54" y="259" width="56" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ojibwe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiS-U4-2Ve">
-                                <rect key="frame" x="54" y="284" width="53" height="21"/>
+                                <rect key="frame" x="51" y="258" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9R-xv-H8U">
                                 <rect key="frame" x="16" y="254" width="30" height="30"/>
-                                <state key="normal" title="○">
+                                <state key="normal" title="○                  ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="englishSearchButton:" destination="744-jG-ALa" eventType="touchUpInside" id="PPH-Zo-VQ0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ojibwe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiS-U4-2Ve">
+                                <rect key="frame" x="51" y="284" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npd-cx-dh7">
                                 <rect key="frame" x="16" y="143" width="46" height="30"/>
                                 <state key="normal" title="Save">
@@ -210,6 +210,10 @@
                                     <action selector="searchInDictionaryButton:" destination="744-jG-ALa" eventType="touchUpInside" id="Xfn-oi-yPs"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gq5-6U-s4D" customClass="PopUpViewController" customModule="LanguageApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="215" width="241" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -217,6 +221,7 @@
                     <connections>
                         <outlet property="LabelForSavedText" destination="kgY-eX-G3t" id="XZw-dJ-XjK"/>
                         <outlet property="TextFieldInput" destination="k2O-PC-a7Q" id="5wZ-sq-Kqo"/>
+                        <outlet property="chooseLanguageErrorPopover" destination="gq5-6U-s4D" id="cLK-Cj-qHN"/>
                         <outlet property="englishSearchButtonButton" destination="K9R-xv-H8U" id="fYZ-Yq-6Ji"/>
                         <outlet property="ojibweSearchButtonButton" destination="gJS-qq-yzg" id="JUu-dN-Kor"/>
                         <outlet property="wordToFind" destination="WOD-Td-R2I" id="APD-fS-LK8"/>

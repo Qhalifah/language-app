@@ -20,6 +20,9 @@ class DictionaryViewController: UIViewController {
     //Need notes on this!!!!!
     var testDictionaryArray: Array<DictionaryWordEntry> = []
     
+    @IBOutlet weak var chooseLanguageErrorPopover: PopUpViewController!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +35,7 @@ class DictionaryViewController: UIViewController {
 //        for i in testDictionaryArray {
 //            yetAnotherArray.append(i)
 //        }
+        self.chooseLanguageErrorPopover.alpha = 0.0
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +69,7 @@ class DictionaryViewController: UIViewController {
     @IBAction func searchInDictionaryButton(sender: AnyObject) {
         findDictionaryWordEntry(self.wordToFind.text, oOrE: self.englishOjibweButtonPseudoBool!)
     }
+    
     func findDictionaryWordEntry(wordToFind:String, oOrE:String) {
         
         for i in testDictionaryArray {
@@ -75,8 +80,13 @@ class DictionaryViewController: UIViewController {
                 self.LabelForSavedText.text = "Switch logged Ojibwe"
             default:
                 self.LabelForSavedText.text = "Switch logged default"
+                self.chooseLanguageErrorPopover.alpha = 1.0
             }
         }
+    }
+    
+    func findSpecificDictionaryEntry(oOrE:String) {
+        
     }
     
     
