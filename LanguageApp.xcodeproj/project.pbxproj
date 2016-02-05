@@ -20,6 +20,7 @@
 		A08D2CDE1C49AA4F006C11A0 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */; };
 		A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */; };
 		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
+		A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A08D2CDD1C49AA4F006C11A0 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OjibweEnglishDictionaryClass.swift; sourceTree = "<group>"; };
 		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeOutDictionaryView.swift; path = ../FadeOutDictionaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				A083355E1C46EC0200283B93 /* AppDelegate.swift */,
 				A08335621C46EC0200283B93 /* Main.storyboard */,
+				A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */,
 				A06984C51C63C5F90077D9E8 /* PopUpViewController.swift */,
 				A08335601C46EC0200283B93 /* ViewController.swift */,
 				A0C125981C46F8FB0025493D /* DictionaryViewController.swift */,
@@ -239,6 +242,7 @@
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
 				A08D2CDE1C49AA4F006C11A0 /* ChartsViewController.swift in Sources */,
 				A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */,
+				A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */,
 				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
 				A06984C61C63C5F90077D9E8 /* PopUpViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class DictionaryViewController: UIViewController {
     var testDictionaryArray: Array<DictionaryWordEntry> = []
     
     @IBOutlet weak var chooseLanguageErrorPopover: PopUpViewController!
-
+    @IBOutlet weak var chooseLanguageErrorFadeOut: FadeOutDictionaryView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,6 @@ class DictionaryViewController: UIViewController {
         
         self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
         self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
-//        var yetAnotherArray: Array<AnyObject> = []
-//        for i in testDictionaryArray {
-//            yetAnotherArray.append(i)
-//        }
         self.chooseLanguageErrorPopover.alpha = 0.0
     }
     
@@ -81,6 +77,7 @@ class DictionaryViewController: UIViewController {
             default:
                 self.LabelForSavedText.text = "Switch logged default"
                 self.chooseLanguageErrorPopover.alpha = 1.0
+                self.chooseLanguageErrorFadeOut.alpha = 0.85
             }
         }
     }
