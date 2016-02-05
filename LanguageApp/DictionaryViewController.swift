@@ -16,7 +16,7 @@ class DictionaryViewController: UIViewController {
     @IBOutlet weak var wordToFind: UITextField!
     @IBOutlet weak var englishSearchButtonButton: UIButton!
     @IBOutlet weak var ojibweSearchButtonButton: UIButton!
-    var englishOjibweButtonPseudoBool: String? = nil
+    var englishOjibweButtonPseudoBool: String = ""
     //Need notes on this!!!!!
     var testDictionaryArray: Array<DictionaryWordEntry> = []
     
@@ -50,7 +50,7 @@ class DictionaryViewController: UIViewController {
     }
     
     @IBAction func englishSearchButton(sender: AnyObject) {
-        if self.englishOjibweButtonPseudoBool == nil || self.englishOjibweButtonPseudoBool == "ojibwe" {
+        if self.englishOjibweButtonPseudoBool == "" || self.englishOjibweButtonPseudoBool == "ojibwe" {
             self.englishSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
             self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
             self.englishOjibweButtonPseudoBool = "english"
@@ -58,7 +58,7 @@ class DictionaryViewController: UIViewController {
     }
     
     @IBAction func ojibweSearchButton(sender: AnyObject) {
-        if self.englishOjibweButtonPseudoBool == nil || self.englishOjibweButtonPseudoBool == "english" {
+        if self.englishOjibweButtonPseudoBool == "" || self.englishOjibweButtonPseudoBool == "english" {
             self.ojibweSearchButtonButton.setTitle("\u{2B24}", forState: .Normal)
             self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
             self.englishOjibweButtonPseudoBool = "ojibwe"
@@ -67,7 +67,7 @@ class DictionaryViewController: UIViewController {
     }
     
     @IBAction func searchInDictionaryButton(sender: AnyObject) {
-        findDictionaryWordEntry(self.wordToFind.text, oOrE: self.englishOjibweButtonPseudoBool!)
+        findDictionaryWordEntry(self.wordToFind.text, oOrE: self.englishOjibweButtonPseudoBool)
     }
     
     func findDictionaryWordEntry(wordToFind:String, oOrE:String) {
@@ -75,9 +75,9 @@ class DictionaryViewController: UIViewController {
         for i in testDictionaryArray {
             switch oOrE {
             case "english":
-                self.LabelForSavedText.text = "Switch logged English"
+                findDictionaryEntryWithEnglish(wordToFind)
             case "ojibwe":
-                self.LabelForSavedText.text = "Switch logged Ojibwe"
+                findDictionaryEntryWithOjibwe(wordToFind)
             default:
                 self.LabelForSavedText.text = "Switch logged default"
                 self.chooseLanguageErrorPopover.alpha = 1.0
@@ -85,9 +85,22 @@ class DictionaryViewController: UIViewController {
         }
     }
     
-    func findSpecificDictionaryEntry(oOrE:String) {
-        
+    func findDictionaryEntryWithEnglish(wordToFind:String) {
+        for i in testDictionaryArray {
+            if i.english == wordToFind {
+                self.LabelForSavedText.text = i.english
+            }
+        }
     }
+    
+    func findDictionaryEntryWithOjibwe(wordToFind:String) {
+        for i in testDictionaryArray {
+            if i.ojibwe == wordToFind {
+                self.LabelForSavedText.text = i.ojibwe
+            }
+        }
+    }
+    
     
     
 }
