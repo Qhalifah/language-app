@@ -46,8 +46,8 @@ class OjibweEnglishDictionary {
             //self.rawMovableArray = rawArray!
         }
         for aRawDiciontary in rawMovableArray {
-            var rawDict: NSDictionary = aRawDiciontary as! NSDictionary
-            var aNewDict = DictionaryWordEntry(aDictionary: rawDict as! [String:String])
+            let rawDict: NSDictionary = aRawDiciontary as! NSDictionary
+            let aNewDict = DictionaryWordEntry(aDictionary: rawDict as! [String:String])
             if aNewDict != nil {
                 self.usableDictionaryArray.append(aNewDict!)
             }

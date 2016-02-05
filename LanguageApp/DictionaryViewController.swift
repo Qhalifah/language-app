@@ -26,7 +26,7 @@ class DictionaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var newTestDictionaryObject = OjibweEnglishDictionary();
+        let newTestDictionaryObject = OjibweEnglishDictionary();
         testDictionaryArray = newTestDictionaryObject.usableDictionaryArray;
         
         self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
