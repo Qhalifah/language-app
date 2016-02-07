@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var goToDictionary: UIButton!
     @IBOutlet weak var goToConjugation: UIButton!
     @IBOutlet weak var goToQuizzes: UIButton!
+    @IBOutlet weak var chartBarButton: UIBarButtonItem!
     
     
     var testDictionaryArray: Array<DictionaryWordEntry> = []
