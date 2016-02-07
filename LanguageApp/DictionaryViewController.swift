@@ -63,12 +63,10 @@ class DictionaryViewController: UIViewController {
     }
     
     @IBAction func searchInDictionaryButton(sender: AnyObject) {
-        findDictionaryWordEntry(self.wordToFind.text, oOrE: self.englishOjibweButtonPseudoBool)
+        findDictionaryWordEntry(self.wordToFind.text!, oOrE: self.englishOjibweButtonPseudoBool)
     }
     
     func findDictionaryWordEntry(wordToFind:String, oOrE:String) {
-        
-        for i in testDictionaryArray {
             switch oOrE {
             case "english":
                 findDictionaryEntryWithEnglish(wordToFind)
@@ -79,7 +77,6 @@ class DictionaryViewController: UIViewController {
                 self.chooseLanguageErrorPopover.alpha = 1.0
                 self.chooseLanguageErrorFadeOut.alpha = 0.85
             }
-        }
     }
     
     func findDictionaryEntryWithEnglish(wordToFind:String) {
