@@ -16,7 +16,6 @@
 		A08335691C46EC0200283B93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08335671C46EC0200283B93 /* LaunchScreen.xib */; };
 		A08335751C46EC0200283B93 /* LanguageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08335741C46EC0200283B93 /* LanguageAppTests.swift */; };
 		A088CDBC1C67FFC5001B74FF /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088CDBB1C67FFC5001B74FF /* ChartsTableViewController.swift */; };
-		A088CDBE1C680025001B74FF /* ChartsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088CDBD1C680025001B74FF /* ChartsTabBarViewController.swift */; };
 		A08D2CDA1C49AA36006C11A0 /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */; };
 		A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */; };
 		A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */; };
@@ -48,7 +47,6 @@
 		A08335731C46EC0200283B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08335741C46EC0200283B93 /* LanguageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageAppTests.swift; sourceTree = "<group>"; };
 		A088CDBB1C67FFC5001B74FF /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
-		A088CDBD1C680025001B74FF /* ChartsTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTabBarViewController.swift; sourceTree = "<group>"; };
 		A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
 		A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjugationViewController.swift; sourceTree = "<group>"; };
 		A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OjibweEnglishDictionaryClass.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */,
 				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
 				A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */,
-				A088CDBD1C680025001B74FF /* ChartsTabBarViewController.swift */,
 				A088CDBB1C67FFC5001B74FF /* ChartsTableViewController.swift */,
 				A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */,
 				A08335651C46EC0200283B93 /* Images.xcassets */,
@@ -247,7 +244,6 @@
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
 				A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */,
 				A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */,
-				A088CDBE1C680025001B74FF /* ChartsTabBarViewController.swift in Sources */,
 				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
 				A06984C61C63C5F90077D9E8 /* PopUpViewController.swift in Sources */,
