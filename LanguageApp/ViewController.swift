@@ -43,7 +43,6 @@ class ViewController: UIViewController {
         case goToQuizzes:
             let nextViewController: QuizzesViewController = segue.destinationViewController as! QuizzesViewController
             nextViewController.DictionaryArray = self.testDictionaryArray
-
         default:
             break
             
