@@ -10,4 +10,6 @@ import UIKit
 
 class QuizzesViewController: UIViewController {
     
+        var DictionaryArray: Array<DictionaryWordEntry> = []
+    
 }

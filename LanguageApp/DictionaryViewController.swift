@@ -16,19 +16,18 @@ class DictionaryViewController: UIViewController {
     @IBOutlet weak var wordToFind: UITextField!
     @IBOutlet weak var englishSearchButtonButton: UIButton!
     @IBOutlet weak var ojibweSearchButtonButton: UIButton!
-    var englishOjibweButtonPseudoBool: String = ""
-    //Need notes on this!!!!!
-    var testDictionaryArray: Array<DictionaryWordEntry> = []
-    
     @IBOutlet weak var chooseLanguageErrorPopover: PopUpViewController!
     @IBOutlet weak var chooseLanguageErrorFadeOut: FadeOutDictionaryView!
+    
+    var englishOjibweButtonPseudoBool: String = ""
+    var DictionaryArray: Array<DictionaryWordEntry> = []
+    var currentDictionary: Dictionary<String,String> = ["english":"", "ojibwe":"", "type":"", "subtype":""]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let newTestDictionaryObject = OjibweEnglishDictionary();
-        testDictionaryArray = newTestDictionaryObject.usableDictionaryArray;
-        
         self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
         self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
         self.chooseLanguageErrorPopover.alpha = 0.0
@@ -80,17 +79,24 @@ class DictionaryViewController: UIViewController {
     }
     
     func findDictionaryEntryWithEnglish(wordToFind:String) {
-        for i in testDictionaryArray {
+        for i in DictionaryArray {
             if i.english == wordToFind {
-                self.LabelForSavedText.text = i.english
+                self.LabelForSavedText.text = i.ojibwe
+                /*i.english = self.currentDictionary["english"]
+                i.ojibwe = self.currentDictionary["ojibwe"]
+                i.type = self.currentDictionary["type"]
+                i.subtype = self.currentDictionary["subtype"]
+                self.currentDictionary["ojibwe"] = self.LabelForSavedText.text*/
+                
+                
             }
         }
     }
     
     func findDictionaryEntryWithOjibwe(wordToFind:String) {
-        for i in testDictionaryArray {
+        for i in DictionaryArray {
             if i.ojibwe == wordToFind {
-                self.LabelForSavedText.text = i.ojibwe
+                self.LabelForSavedText.text = i.english
             }
         }
     }

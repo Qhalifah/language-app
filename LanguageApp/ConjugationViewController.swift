@@ -10,4 +10,6 @@ import UIKit
 
 class ConjugationViewController: UIViewController {
     
+    var DictionaryArray: Array<DictionaryWordEntry> = []
+    
 }
