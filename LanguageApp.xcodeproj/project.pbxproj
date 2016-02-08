@@ -15,10 +15,12 @@
 		A08335661C46EC0200283B93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08335651C46EC0200283B93 /* Images.xcassets */; };
 		A08335691C46EC0200283B93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08335671C46EC0200283B93 /* LaunchScreen.xib */; };
 		A08335751C46EC0200283B93 /* LanguageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08335741C46EC0200283B93 /* LanguageAppTests.swift */; };
-		A088CDBC1C67FFC5001B74FF /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088CDBB1C67FFC5001B74FF /* ChartsTableViewController.swift */; };
 		A08D2CDA1C49AA36006C11A0 /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */; };
 		A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */; };
 		A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */; };
+		A0B396971C68218D00C9E9DF /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B396961C68218D00C9E9DF /* ChartsViewController.swift */; };
+		A0B396991C68260900C9E9DF /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B396981C68260900C9E9DF /* ChartsTableViewController.swift */; };
+		A0B3969B1C68262B00C9E9DF /* ChartsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */; };
 		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
 		A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */; };
 /* End PBXBuildFile section */
@@ -46,10 +48,12 @@
 		A083356E1C46EC0200283B93 /* LanguageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08335731C46EC0200283B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08335741C46EC0200283B93 /* LanguageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageAppTests.swift; sourceTree = "<group>"; };
-		A088CDBB1C67FFC5001B74FF /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
 		A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
 		A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjugationViewController.swift; sourceTree = "<group>"; };
 		A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OjibweEnglishDictionaryClass.swift; sourceTree = "<group>"; };
+		A0B396961C68218D00C9E9DF /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsViewController.swift; path = ../ChartsViewController.swift; sourceTree = "<group>"; };
+		A0B396981C68260900C9E9DF /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
+		A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsCollectionViewController.swift; path = ../ChartsCollectionViewController.swift; sourceTree = "<group>"; };
 		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeOutDictionaryView.swift; path = ../FadeOutDictionaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +106,9 @@
 				A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */,
 				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
 				A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */,
-				A088CDBB1C67FFC5001B74FF /* ChartsTableViewController.swift */,
+				A0B396961C68218D00C9E9DF /* ChartsViewController.swift */,
+				A0B396981C68260900C9E9DF /* ChartsTableViewController.swift */,
+				A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */,
 				A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */,
 				A08335651C46EC0200283B93 /* Images.xcassets */,
 				A08335671C46EC0200283B93 /* LaunchScreen.xib */,
@@ -240,14 +246,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08D2CDA1C49AA36006C11A0 /* QuizzesViewController.swift in Sources */,
+				A0B396971C68218D00C9E9DF /* ChartsViewController.swift in Sources */,
 				A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */,
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
 				A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */,
 				A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */,
 				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
+				A0B396991C68260900C9E9DF /* ChartsTableViewController.swift in Sources */,
 				A06984C61C63C5F90077D9E8 /* PopUpViewController.swift in Sources */,
-				A088CDBC1C67FFC5001B74FF /* ChartsTableViewController.swift in Sources */,
+				A0B3969B1C68262B00C9E9DF /* ChartsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

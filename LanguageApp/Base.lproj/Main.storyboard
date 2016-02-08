@@ -50,7 +50,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AV2-pZ-aKF" kind="push" id="3AG-Gj-rDu"/>
+                                    <segue destination="G1M-01-8BG" kind="push" id="DNZ-0W-PLK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,34 +69,113 @@
             </objects>
             <point key="canvasLocation" x="198" y="334"/>
         </scene>
-        <!--Charts Table View Controller-->
-        <scene sceneID="eWh-sX-6vf">
+        <!--Charts Collection View Controller-->
+        <scene sceneID="L5L-47-CEs">
             <objects>
-                <tableViewController id="AV2-pZ-aKF" customClass="ChartsTableViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="m4T-0T-Uta">
+                <collectionViewController id="G1M-01-8BG" customClass="ChartsCollectionViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QW0-t5-lxp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hFZ-KO-diB">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="f2a-kf-gz3">
+                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="3a0-Hy-Chw" kind="push" id="ENn-Cb-ijf"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="G1M-01-8BG" id="KIm-0q-hPT"/>
+                            <outlet property="delegate" destination="G1M-01-8BG" id="igg-wo-VhK"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="N1p-hP-AW4"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwF-LL-G0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127" y="-344"/>
+        </scene>
+        <!--Charts Table View Controller-->
+        <scene sceneID="ObK-Ck-GNK">
+            <objects>
+                <tableViewController id="3a0-Hy-Chw" customClass="ChartsTableViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dNN-ln-i8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iyp-tD-ZMR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tip-OV-icV">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyp-tD-ZMR" id="fIF-76-XAs">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tip-OV-icV" id="WcF-sL-Sho">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="AV2-pZ-aKF" id="uay-4f-2ku"/>
-                            <outlet property="delegate" destination="AV2-pZ-aKF" id="u3r-vh-LZq"/>
+                            <outlet property="dataSource" destination="3a0-Hy-Chw" id="Q08-Pf-FBQ"/>
+                            <outlet property="delegate" destination="3a0-Hy-Chw" id="5TM-F0-pMQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rNB-kK-JuM"/>
+                    <navigationItem key="navigationItem" id="ji2-yU-078"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vSQ-pV-ch7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwc-ga-QNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-328"/>
+            <point key="canvasLocation" x="600" y="-830"/>
+        </scene>
+        <!--Charts View Controller-->
+        <scene sceneID="AAa-Mk-8ht">
+            <objects>
+                <viewController id="UGB-oa-8TU" customClass="ChartsViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ab7-m3-aV1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hq3-Y4-ZO4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BdB-Gg-rUN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WIa-fQ-QAy" customClass="IndividualChartTableViewController" customModule="LanguageApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="320" height="452"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZg-nT-Dup">
+                                <rect key="frame" x="37" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ei-iv-idR">
+                                <rect key="frame" x="116" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3b-fg-0hM">
+                                <rect key="frame" x="186" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="voA-LJ-HUt"/>
+                    <connections>
+                        <outlet property="tableView" destination="WIa-fQ-QAy" id="gtO-gR-tPR"/>
+                        <outlet property="view" destination="WIa-fQ-QAy" id="0k7-QA-gjA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gY-hj-1fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="-1069"/>
         </scene>
         <!--Quizzes-->
         <scene sceneID="NGb-VX-bce">

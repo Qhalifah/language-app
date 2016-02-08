@@ -9,8 +9,9 @@
 import UIKit
 
 class ChartsTableViewController: UITableViewController {
-
     
+    var testViewItems: [String] = ["Beshig", "Niiwin", "Niswi", "Niiwin"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
