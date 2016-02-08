@@ -59,11 +59,10 @@ class ChartsCollectionViewController: UICollectionViewController {
         
         // Configure the cell
         cell.backgroundColor = UIColor.brownColor()
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 10
         cell.usableCellText.text = testViewItems[indexPath.item]
-        
-        
-        
-        
         
         return cell
     }
