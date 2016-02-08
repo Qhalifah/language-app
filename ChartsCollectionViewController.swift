@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 class ChartsCollectionViewController: UICollectionViewController {
     
     var testViewItems: [String] = ["Beshig", "Niiwin", "Niswi", "Niiwin"]
+    @IBOutlet var usableLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,20 +46,23 @@ class ChartsCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 3
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        
         // Configure the cell
     
+        cell.backgroundColor = UIColor.brownColor()
+        
+        
         return cell
     }
 
