@@ -13,7 +13,7 @@ private let reuseIdentifier = "Cell"
 class ChartsCollectionViewController: UICollectionViewController {
     
     var testViewItems: [String] = ["Beshig", "Niiwin", "Niswi", "Niiwin"]
-    
+    var chartToLoad: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,15 +31,17 @@ class ChartsCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        let tableViewController = segue.destinationViewController as! ChartsTableViewController
+        tableViewController.testChartToLoad = self.chartToLoad
+        
     }
-    */
+
 
     // MARK: UICollectionViewDataSource
 
@@ -51,7 +53,7 @@ class ChartsCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        return self.testViewItems.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -67,6 +69,21 @@ class ChartsCollectionViewController: UICollectionViewController {
         return cell
     }
 
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath {
+        case 0:
+            chartToLoad = 0
+        case 1:
+            chartToLoad = 1
+        case 2:
+            chartToLoad = 2
+        case 3:
+            chartToLoad = 3
+        default:
+            chartToLoad = 0
+        }
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

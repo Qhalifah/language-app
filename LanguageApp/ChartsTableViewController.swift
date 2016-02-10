@@ -11,6 +11,7 @@ import UIKit
 class ChartsTableViewController: UITableViewController {
     
     var testViewItems: [String] = ["Beshig", "Niiwin", "Niswi", "Niiwin"]
+    var testChartToLoad: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
