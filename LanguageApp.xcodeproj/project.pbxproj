@@ -20,7 +20,6 @@
 		A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */; };
 		A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */; };
 		A0B396971C68218D00C9E9DF /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B396961C68218D00C9E9DF /* ChartsViewController.swift */; };
-		A0B396991C68260900C9E9DF /* ChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B396981C68260900C9E9DF /* ChartsTableViewController.swift */; };
 		A0B3969B1C68262B00C9E9DF /* ChartsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */; };
 		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
 		A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */; };
@@ -54,7 +53,6 @@
 		A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConjugationViewController.swift; sourceTree = "<group>"; };
 		A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OjibweEnglishDictionaryClass.swift; sourceTree = "<group>"; };
 		A0B396961C68218D00C9E9DF /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsViewController.swift; path = ../ChartsViewController.swift; sourceTree = "<group>"; };
-		A0B396981C68260900C9E9DF /* ChartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsTableViewController.swift; sourceTree = "<group>"; };
 		A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsCollectionViewController.swift; path = ../ChartsCollectionViewController.swift; sourceTree = "<group>"; };
 		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeOutDictionaryView.swift; path = ../FadeOutDictionaryView.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
 				A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */,
 				A0B396961C68218D00C9E9DF /* ChartsViewController.swift */,
-				A0B396981C68260900C9E9DF /* ChartsTableViewController.swift */,
 				A08941A21C68494100A407B9 /* ChartCollectionViewCell.swift */,
 				A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */,
 				A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */,
@@ -256,7 +253,6 @@
 				A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */,
 				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
-				A0B396991C68260900C9E9DF /* ChartsTableViewController.swift in Sources */,
 				A08941A31C68494100A407B9 /* ChartCollectionViewCell.swift in Sources */,
 				A06984C61C63C5F90077D9E8 /* PopUpViewController.swift in Sources */,
 				A0B3969B1C68262B00C9E9DF /* ChartsCollectionViewController.swift in Sources */,
