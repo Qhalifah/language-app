@@ -10,10 +10,11 @@ import UIKit
 
 class ChartsViewController: UIViewController {
     
-    var testChartToload: Int = 0
+    var testChartToload: Int = 3
 
     @IBAction func nounChartButton(sender: AnyObject) {
         self.testChartToload = 0
+        customTestFunc()
     }
     
     @IBAction func verbChartButton(sender: AnyObject) {
@@ -37,20 +38,11 @@ class ChartsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let chartsTableViewController = segue.destinationViewController as! ChartsTableViewController
-        switch testChartToload {
-        case 0:
-            chartsTableViewController.testChartToLoad = self.testChartToload
-        case 1:
-            chartsTableViewController.testChartToLoad = self.testChartToload
-        case 2:
-            chartsTableViewController.testChartToLoad = self.testChartToload
-        case 3:
-            chartsTableViewController.testChartToLoad = self.testChartToload
-        default:
-            chartsTableViewController.testChartToLoad = self.testChartToload
+    func customTestFunc() {
+        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let chartsTableViewController = segue.destinationViewController as! ChartsTableViewController
+            self.testChartToload = chartsTableViewController.testChartToLoad
+            chartsTableViewController.reloadInputViews()
         }
     }
-
 }

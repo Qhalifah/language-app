@@ -55,16 +55,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="D5V-Al-7fN"/>
-                    <connections>
-                        <outlet property="adjChartButton" destination="dhL-yW-QDO" id="bbf-af-s0t"/>
-                        <outlet property="etcChartButton" destination="ckU-9C-NkX" id="Qsy-Vf-3WT"/>
-                        <outlet property="nounChartButton" destination="VjI-n5-XtP" id="Qxc-u3-AqR"/>
-                        <outlet property="verbChartButton" destination="TqT-74-FdN" id="omx-1B-EKx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDq-DH-OLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="-489"/>
+            <point key="canvasLocation" x="-24" y="-518"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
