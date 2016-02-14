@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         switch sender as! UIButton {
         case goToDictionary:
             let nextViewController: DictionaryViewController = segue.destinationViewController as! DictionaryViewController

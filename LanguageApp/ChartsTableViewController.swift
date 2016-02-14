@@ -14,6 +14,7 @@ class ChartsTableViewController: UITableViewController {
     var testChartToLoad: Int = 0
     var chartsForTest: [[String]] = [["Beshig", "Niiwin", "Niswi", "Niiwin"], ["Naanan"], ["Six"], ["Seven"]]
     var chartToBeUsed: [String] = []
+    var count: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ChartsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.registerClass(ChartsTableCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,15 +42,15 @@ class ChartsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         self.chartToBeUsed = self.chartsForTest[testChartToLoad]
-        return self.chartsForTest[testChartToLoad].count
+        return self.chartToBeUsed.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! ChartsTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-        cell.cellText!.text = self.chartToBeUsed[/*at index == indexPath*/]
-        
+        print(self.chartToBeUsed[indexPath.row])
+        cell.textLabel?.text = self.chartToBeUsed[indexPath.row]
         return cell
     }
 

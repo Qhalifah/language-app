@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Charts View Controller-->
         <scene sceneID="rZX-qQ-Udm">
             <objects>
-                <viewController id="QpZ-VX-qze" sceneMemberID="viewController">
+                <viewController id="QpZ-VX-qze" customClass="ChartsViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="38x-nd-3DB"/>
                         <viewControllerLayoutGuide type="bottom" id="XfT-BC-l5n"/>
@@ -17,26 +17,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VjI-n5-XtP">
+                                <rect key="frame" x="12" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nounChartButton:" destination="QpZ-VX-qze" eventType="touchUpInside" id="f4n-KQ-cLG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-74-FdN">
+                                <rect key="frame" x="81" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="verbChartButton:" destination="QpZ-VX-qze" eventType="touchUpInside" id="NnK-os-Kuz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhL-yW-QDO">
+                                <rect key="frame" x="154" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="adjChartButton:" destination="QpZ-VX-qze" eventType="touchUpInside" id="fRu-Cx-ewC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckU-9C-NkX">
+                                <rect key="frame" x="237" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="etcChartButton:" destination="QpZ-VX-qze" eventType="touchUpInside" id="g4x-ZR-AgJ"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-H4-Ths">
-                                <rect key="frame" x="0.0" y="184" width="320" height="384"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="451"/>
                                 <connections>
                                     <segue destination="3a0-Hy-Chw" kind="embed" id="sdN-Ka-5LJ"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrv-nS-alZ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="121"/>
-                                <connections>
-                                    <segue destination="G1M-01-8BG" kind="embed" id="r9F-mg-r9c"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="D5V-Al-7fN"/>
+                    <connections>
+                        <outlet property="adjChartButton" destination="dhL-yW-QDO" id="bbf-af-s0t"/>
+                        <outlet property="etcChartButton" destination="ckU-9C-NkX" id="Qsy-Vf-3WT"/>
+                        <outlet property="nounChartButton" destination="VjI-n5-XtP" id="Qxc-u3-AqR"/>
+                        <outlet property="verbChartButton" destination="TqT-74-FdN" id="omx-1B-EKx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDq-DH-OLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="-488"/>
+            <point key="canvasLocation" x="74" y="-489"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -107,7 +135,7 @@
             <objects>
                 <collectionViewController id="G1M-01-8BG" customClass="ChartsCollectionViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QW0-t5-lxp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hFZ-KO-diB">
@@ -147,24 +175,35 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwF-LL-G0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="-711.5"/>
+            <point key="canvasLocation" x="898" y="-889"/>
         </scene>
         <!--Charts Table View Controller-->
         <scene sceneID="ObK-Ck-GNK">
             <objects>
                 <tableViewController id="3a0-Hy-Chw" customClass="ChartsTableViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dNN-ln-i8e">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="384"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tip-OV-icV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tip-OV-icV" customClass="ChartsTableCell" customModule="LanguageApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tip-OV-icV" id="WcF-sL-Sho">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwa-I7-9tl">
+                                            <rect key="frame" x="13" y="11" width="299" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellText" destination="fwa-I7-9tl" id="QEN-Nh-czC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

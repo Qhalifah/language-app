@@ -8,19 +8,28 @@
 
 import UIKit
 
-class ChartsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChartsViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
-    var testViewItems: [String] = ["Beshig", "Niiwin", "Niswi", "Niiwin"]
+    var testChartToload: Int = 0
 
+    @IBAction func nounChartButton(sender: AnyObject) {
+        self.testChartToload = 0
+    }
+    
+    @IBAction func verbChartButton(sender: AnyObject) {
+        self.testChartToload = 1
+    }
+    
+    @IBAction func adjChartButton(sender: AnyObject) {
+        self.testChartToload = 2
+    }
+    
+    @IBAction func etcChartButton(sender: AnyObject) {
+        self.testChartToload = 3
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,29 +37,20 @@ class ChartsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.testViewItems.count;
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel?.text = self.testViewItems[indexPath.row]
-        return UITableViewCell()
-    }
-    
-//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {}
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let chartsTableViewController = segue.destinationViewController as! ChartsTableViewController
+        switch testChartToload {
+        case 0:
+            chartsTableViewController.testChartToLoad = self.testChartToload
+        case 1:
+            chartsTableViewController.testChartToLoad = self.testChartToload
+        case 2:
+            chartsTableViewController.testChartToLoad = self.testChartToload
+        case 3:
+            chartsTableViewController.testChartToLoad = self.testChartToload
+        default:
+            chartsTableViewController.testChartToLoad = self.testChartToload
+        }
     }
-    */
 
 }
