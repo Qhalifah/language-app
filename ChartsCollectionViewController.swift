@@ -37,8 +37,8 @@ class ChartsCollectionViewController: UICollectionViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        let tableViewController = segue.destinationViewController as! ChartsTableViewController
-        tableViewController.testChartToLoad = self.chartToLoad
+        //let tableViewController = segue.destinationViewController as! ChartsTableViewController
+        //tableViewController.testChartToLoad = self.chartToLoad
         
     }
 

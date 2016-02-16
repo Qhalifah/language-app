@@ -8,25 +8,30 @@
 
 import UIKit
 
-class ChartsViewController: UIViewController {
+protocol globalProtocol {
     
-    var testChartToload: Int = 3
+    var testChartToLoad: Int { get }
+    
+}
+
+class ChartsViewController: UIViewController, globalProtocol {
+    
+    var testChartToLoad: Int = 1
 
     @IBAction func nounChartButton(sender: AnyObject) {
-        self.testChartToload = 0
-        customTestFunc()
+        self.testChartToLoad = 0
     }
     
     @IBAction func verbChartButton(sender: AnyObject) {
-        self.testChartToload = 1
+        self.testChartToLoad = 1
     }
     
     @IBAction func adjChartButton(sender: AnyObject) {
-        self.testChartToload = 2
+        self.testChartToLoad = 2
     }
     
     @IBAction func etcChartButton(sender: AnyObject) {
-        self.testChartToload = 3
+        self.testChartToLoad = 3
     }
 
     override func viewDidLoad() {
@@ -38,19 +43,18 @@ class ChartsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func customTestFunc() {
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            let chartsTableViewController = segue.destinationViewController as! ChartsTableViewController
-            self.testChartToload = chartsTableViewController.testChartToLoad
-            chartsTableViewController.reloadInputViews()
-        }
-    }
+    //Not going to be activated by the click of a button...
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let chartsTableViewController = segue.destinationViewController as! ChartsTableViewController
+        self.testChartToLoad = chartsTableViewController.testChartToLoad
+        chartsTableViewController.reloadInputViews()
+    }*/
 }
 
-class ChartsTableViewController: UITableViewController {
+class ChartsTableViewController: UITableViewController, globalProtocol  {
     
-    var testViewItems: [String] = ["Beshig", "Niiwin", "Niswi", "Niiwin"]
-    var testChartToLoad: Int = 0
+    var testChartToLoad: Int = 3
+    
     var chartsForTest: [[String]] = [["Beshig", "Niiwin", "Niswi", "Niiwin"], ["Naanan"], ["Six"], ["Seven"]]
     var chartToBeUsed: [String] = []
     var count: Int = 0
@@ -58,11 +62,12 @@ class ChartsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         //Uncomment the following line to preserve selection between presentations
+        self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.chartToBeUsed = self.chartsForTest[testChartToLoad]
     }
@@ -93,6 +98,30 @@ class ChartsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let view = UIView()
+            let nounChartButton = UIButton(type: UIButtonType.System) as UIButton
+            nounChartButton.frame = CGRectMake(100, 100, 100, 50)
+            nounChartButton.backgroundColor = UIColor.whiteColor()
+            nounChartButton.setTitle("Nouns", forState: UIControlState.Normal)
+            nounChartButton.addTarget(self, action: "nounChartButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        
+            self.view.addSubview(nounChartButton)
+            return view
+        }
+        return nil
+    }
+    
+    /*
+    func nounChartButtonaction(sender: UIButton!) {
+        self.testChartToLoad = 1
+        self.tableView.reloadData()//
+    }*/
     
     /*
     // Override to support conditional editing of the table view.
