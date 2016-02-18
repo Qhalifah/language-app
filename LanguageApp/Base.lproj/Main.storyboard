@@ -47,9 +47,6 @@
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVr-H4-Ths">
                                 <rect key="frame" x="0.0" y="117" width="320" height="451"/>
-                                <connections>
-                                    <segue destination="3a0-Hy-Chw" kind="embed" id="sdN-Ka-5LJ"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QpZ-VX-qze" kind="push" id="C07-x2-ySR"/>
+                                    <segue destination="3a0-Hy-Chw" kind="push" id="fAf-Sg-G0l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -176,12 +173,12 @@
             <objects>
                 <tableViewController id="3a0-Hy-Chw" customClass="ChartsTableViewController" customModule="LanguageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dNN-ln-i8e">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tip-OV-icV" customClass="ChartsTableCell" customModule="LanguageApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tip-OV-icV" id="WcF-sL-Sho">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>

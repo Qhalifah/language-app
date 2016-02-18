@@ -57,7 +57,6 @@ class ChartsTableViewController: UITableViewController, globalProtocol  {
     
     var chartsForTest: [[String]] = [["Beshig", "Niiwin", "Niswi", "Niiwin"], ["Naanan"], ["Six"], ["Seven"]]
     var chartToBeUsed: [String] = []
-    var count: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,22 +105,23 @@ class ChartsTableViewController: UITableViewController, globalProtocol  {
         if section == 0 {
             let view = UIView()
             let nounChartButton = UIButton(type: UIButtonType.System) as UIButton
-            nounChartButton.frame = CGRectMake(100, 100, 100, 50)
+            nounChartButton.frame = CGRectMake(100, 100, 100, 30)
             nounChartButton.backgroundColor = UIColor.whiteColor()
             nounChartButton.setTitle("Nouns", forState: UIControlState.Normal)
             nounChartButton.addTarget(self, action: "nounChartButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
         
             self.view.addSubview(nounChartButton)
+            
             return view
+            
         }
         return nil
     }
     
-    /*
-    func nounChartButtonaction(sender: UIButton!) {
+    @IBAction func nounChartButtonaction(sender: AnyObject) {
         self.testChartToLoad = 1
-        self.tableView.reloadData()//
-    }*/
+        self.tableView.reloadData()
+    }
     
     /*
     // Override to support conditional editing of the table view.
