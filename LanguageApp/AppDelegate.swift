@@ -43,10 +43,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-class globalClass: UIViewController {
-
-    var testChartToLoad: Int = 3
-    
-}
 
 
