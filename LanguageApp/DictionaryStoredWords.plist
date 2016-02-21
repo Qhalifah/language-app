@@ -4,6 +4,16 @@
 <array>
 	<dict>
 		<key>english</key>
+		<string>bald eagle</string>
+		<key>ojibwe</key>
+		<string>migizi</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
 		<string>it is black</string>
 		<key>ojibwe</key>
 		<string>makade</string>

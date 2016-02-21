@@ -5,9 +5,7 @@
 //  Created by Schmitty J Smith on 1/15/16.
 //  Copyright (c) 2016 Schmitty B Smith. All rights reserved.
 //
-//60min
 //
-//God I still want to be in a relationship with her - I want to hold her be close to her and be held by her and kiss her and cuddle with her and just sit and do work with her. I'm scared that what exists with us is going to break, or change in a way that doesn't have the same kind of calm and comfort and love and good of it. Please ack I'm scared, and nervous, and sad.
 
 import UIKit
 
@@ -30,6 +28,7 @@ class QuizzesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let quizQuestion = QuizQuestion(dictionaryArry: DictionaryArray)
+        print(quizQuestion)
     }
     
     
@@ -40,36 +39,34 @@ class QuizzesViewController: UIViewController {
 class QuizQuestion: NSObject {
 
     var questionWordsArray: Array<DictionaryWordEntry> = []
+    var notQuiteRightErrorArray: [[String]] = [[],["was", "want it to be", "are", "were"]]
+    
     var objectQuestionText: String = ""
     var objectAnswerOneText: String = ""
     var objectAnswerTwoText:String = ""
     var objectAnswerThreeText: String = ""
     var objectAnswerFourText: String = ""
-    var randomIntForQuestionAssignment: Int
-    var randomIntForTypeOfQuestionAssignment: Int
-    var notQuiteRightErrorArray: [[String]] = [[],["was", "want it to be", "are", "were"]]
+    
+    var randomIntForQuestionAssignment: UInt32 = 0
+    var randomIntForTypeOfQuestionAssignment: UInt32 = 0
+    var rand: UInt32 = 0
   
     //Dict word entry is formatted as dictionaryArray.usableDictionaryArray[index].english||ojibwe||type||subtype
     init(dictionaryArry: Array<DictionaryWordEntry>) {
         //shuffle OjibweEnglishDictionary
         self.randomIntForQuestionAssignment = 1
         self.randomIntForTypeOfQuestionAssignment = 1
-        var i = 0
-        while i <= 10  {
-            self.questionWordsArray.append(dictionaryArry[i])
-            i = i + 1
+        let testArray: Array<DictionaryWordEntry> = dictionaryArry.self
+        
+        for i in 0...9 {
+            rand = arc4random_uniform(UInt32(testArray.count))
+            questionWordsArray.append(testArray[Int(rand)])
+            print("i: \(i)            rand: \(rand)")
         }
-        //Have a randomized array of changes to make to the word/entry/etc., assign the actual answer 
+        
+        //Have a randomized array of changes to make to the word/entry/etc., assign the actual answer
         //to a random value of 1-4, and assign the another meaning (either wrong verb person/tense) or wrong noun.
-        
-        for i in questionWordsArray {
-            //switch based upon a) the int in randomIntForQuestionAssignment and b) for what key is the question asking about
-            
-        }
-        
-    
     }
-    
     
     func selectDWEntryEnglishText(i: DictionaryWordEntry) {
         switch randomIntForQuestionAssignment {
@@ -141,3 +138,13 @@ class QuizQuestion: NSObject {
     
     
 }
+
+/* Extension for Array from (*website is bookmarked*), used to shuffle Array. Gave error ~'type () does not conform to Protocol SequenceType'
+extension Array {
+    mutating func shuffle() {
+        for i in  0 ..< (count - 1) {
+            let j = Int(arc4random_uniform(UInt32(count - 1))) + i
+            swap(&self[i], &self[j])
+        }
+    }
+}*/
