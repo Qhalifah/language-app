@@ -27,8 +27,8 @@ class QuizzesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let quizQuestion = QuizQuestion(dictionaryArry: DictionaryArray)
-        print(quizQuestion)
+        let quiz = QuizObject(dictionaryArry: DictionaryArray)
+        print(quiz)
     }
     
     
@@ -36,12 +36,38 @@ class QuizzesViewController: UIViewController {
     
 }
 
+class QuizObject: NSObject {
+    
+    var questionWordsArray: Array<DictionaryWordEntry> = []
+    var questionArray: Array<QuizQuestion> = []
+    
+    var rand: UInt32 = 0
+    
+    init(dictionaryArry: Array<DictionaryWordEntry>) {
+        super.init()
+        //shuffle OjibweEnglishDictionary
+        
+        //change range value here depending on # of questions being asked in each quiz.
+        for i in 0...9 {
+            rand = arc4random_uniform(UInt32(dictionaryArry.count))
+            questionWordsArray.append(dictionaryArry[Int(rand)])
+            print("i: \(i)            rand: \(rand)")
+        }
+        
+        for dWE in questionWordsArray {
+            let individualQuestion = QuizQuestion(i: dWE)
+            questionArray.append(individualQuestion)
+        }
+    }
+    
+}
+
 class QuizQuestion: NSObject {
 
-    var questionWordsArray: Array<DictionaryWordEntry> = []
     var notQuiteRightErrorArray: [[String]] = [[],["was", "want it to be", "are", "were"]]
     
     var objectQuestionText: String = ""
+    //NEED either another class to be a QuizObject, or an array of answer values for each of the needed answers.
     var objectAnswerOneText: String = ""
     var objectAnswerTwoText:String = ""
     var objectAnswerThreeText: String = ""
@@ -49,34 +75,42 @@ class QuizQuestion: NSObject {
     
     var randomIntForQuestionAssignment: UInt32 = 0
     var randomIntForTypeOfQuestionAssignment: UInt32 = 0
-    var rand: UInt32 = 0
   
     //Dict word entry is formatted as dictionaryArray.usableDictionaryArray[index].english||ojibwe||type||subtype
-    init(dictionaryArry: Array<DictionaryWordEntry>) {
+    init(i: DictionaryWordEntry) {
+        super.init()
         //shuffle OjibweEnglishDictionary
         self.randomIntForQuestionAssignment = 1
         self.randomIntForTypeOfQuestionAssignment = 1
-        let testArray: Array<DictionaryWordEntry> = dictionaryArry.self
         
-        for i in 0...9 {
-            rand = arc4random_uniform(UInt32(testArray.count))
-            questionWordsArray.append(testArray[Int(rand)])
-            print("i: \(i)            rand: \(rand)")
+        correctAnswerAssignment(i)
+        
+    }
+    func correctAnswerAssignment(i:DictionaryWordEntry) {
+        randomIntForTypeOfQuestionAssignment = arc4random_uniform(UInt32(4))
+        print(randomIntForTypeOfQuestionAssignment)
+        switch randomIntForTypeOfQuestionAssignment {
+        case 0:
+            selectDWEntryEnglishText(i)
+        case 1:
+            selectDWEntryOjibweText(i)
+        case 2 | 3:
+            selectDWEntryTypeText(i)
+        default:
+            break
         }
-        
-        //Have a randomized array of changes to make to the word/entry/etc., assign the actual answer
-        //to a random value of 1-4, and assign the another meaning (either wrong verb person/tense) or wrong noun.
     }
     
     func selectDWEntryEnglishText(i: DictionaryWordEntry) {
+        randomIntForQuestionAssignment = arc4random_uniform(UInt32(4))
         switch randomIntForQuestionAssignment {
-        case 1:
+        case 0:
             self.objectAnswerOneText = i.english!
-        case 2:
+        case 1:
             self.objectAnswerTwoText = i.english!
-        case 3:
+        case 2:
             self.objectAnswerThreeText = i.english!
-        case 4:
+        case 3:
             self.objectAnswerFourText = i.english!
         default:
             break
@@ -84,14 +118,15 @@ class QuizQuestion: NSObject {
     }
     
     func selectDWEntryOjibweText(i: DictionaryWordEntry) {
+        randomIntForQuestionAssignment = arc4random_uniform(UInt32(4))
         switch randomIntForQuestionAssignment {
-        case 1:
+        case 0:
             self.objectAnswerOneText = i.ojibwe!
-        case 2:
+        case 1:
             self.objectAnswerTwoText = i.ojibwe!
-        case 3:
+        case 2:
             self.objectAnswerThreeText = i.ojibwe!
-        case 4:
+        case 3:
             self.objectAnswerFourText = i.ojibwe!
         default:
             break
@@ -99,14 +134,15 @@ class QuizQuestion: NSObject {
     }
     
     func selectDWEntryTypeText(i: DictionaryWordEntry) {
-        switch randomIntForTypeOfQuestionAssignment {
-        case 1:
+        randomIntForQuestionAssignment = arc4random_uniform(UInt32(4))
+        switch randomIntForQuestionAssignment {
+        case 0:
             self.objectAnswerOneText = typeQuestionFullText(i.subtype!)
-        case 2:
+        case 1:
             self.objectAnswerTwoText = typeQuestionFullText(i.subtype!)
-        case 3:
+        case 2:
             self.objectAnswerThreeText = typeQuestionFullText(i.subtype!)
-        case 4:
+        case 3:
             self.objectAnswerFourText = typeQuestionFullText(i.subtype!)
         default:
             break
@@ -131,6 +167,7 @@ class QuizQuestion: NSObject {
         default:
             break
         }
+        print(text)
         return text
     }
     
