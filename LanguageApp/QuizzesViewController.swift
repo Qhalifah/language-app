@@ -53,10 +53,16 @@ class QuizObject: NSObject {
             questionWordsArray.append(dictionaryArry[Int(rand)])
             print("i: \(i)            rand: \(rand)")
         }
+        print("SPLIT!")
         
         for dWE in questionWordsArray {
             let individualQuestion = QuizQuestion(i: dWE)
             questionArray.append(individualQuestion)
+        }
+        print("SPLIT!")
+        
+        for question in questionArray {
+            print("\(question.objectAnswerOneText), \(question.objectAnswerTwoText),  \(question.objectAnswerThreeText),  \(question.objectAnswerFourText): \(question.randomIntForQuestionAssignment)")
         }
     }
     
@@ -94,7 +100,9 @@ class QuizQuestion: NSObject {
             selectDWEntryEnglishText(i)
         case 1:
             selectDWEntryOjibweText(i)
-        case 2 | 3:
+        case 2:
+            selectDWEntryTypeText(i)
+        case 3:
             selectDWEntryTypeText(i)
         default:
             break
@@ -167,7 +175,6 @@ class QuizQuestion: NSObject {
         default:
             break
         }
-        print(text)
         return text
     }
     
