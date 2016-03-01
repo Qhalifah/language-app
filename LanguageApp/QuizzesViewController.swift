@@ -29,6 +29,10 @@ class QuizzesViewController: UIViewController {
         super.viewDidLoad()
         let quiz = QuizObject(dictionaryArry: DictionaryArray)
         print(quiz)
+        self.answerOneText.text = quiz.questionArray[1].objectAnswerOneText
+        self.answerTwoText.text = quiz.questionArray[1].objectAnswerTwoText
+        self.answerThreeText.text = quiz.questionArray[1].objectAnswerThreeText
+        self.answerFourText.text = quiz.questionArray[1].objectAnswerFourText
     }
     
     
@@ -62,7 +66,8 @@ class QuizObject: NSObject {
         print("SPLIT!")
         
         for question in questionArray {
-            print("\(question.objectAnswerOneText), \(question.objectAnswerTwoText),  \(question.objectAnswerThreeText),  \(question.objectAnswerFourText): \(question.randomIntForQuestionAssignment)")
+            print("\(question.objectAnswerOneText), \(question.objectAnswerTwoText),  \(question.objectAnswerThreeText),  \(question.objectAnswerFourText): \(question.randomInt + 1)")
+            
         }
     }
     
@@ -73,36 +78,28 @@ class QuizQuestion: NSObject {
     var notQuiteRightErrorArray: [[String]] = [[],["was", "want it to be", "are", "were"]]
     
     var objectQuestionText: String = ""
-    //NEED either another class to be a QuizObject, or an array of answer values for each of the needed answers.
     var objectAnswerOneText: String = ""
     var objectAnswerTwoText:String = ""
     var objectAnswerThreeText: String = ""
     var objectAnswerFourText: String = ""
     
-    var randomIntForQuestionAssignment: UInt32 = 0
-    var randomIntForTypeOfQuestionAssignment: UInt32 = 0
+    var randomInt: UInt32 = 0
   
     //Dict word entry is formatted as dictionaryArray.usableDictionaryArray[index].english||ojibwe||type||subtype
     init(i: DictionaryWordEntry) {
         super.init()
-        //shuffle OjibweEnglishDictionary
-        self.randomIntForQuestionAssignment = 1
-        self.randomIntForTypeOfQuestionAssignment = 1
-        
         correctAnswerAssignment(i)
         
     }
     func correctAnswerAssignment(i:DictionaryWordEntry) {
-        randomIntForTypeOfQuestionAssignment = arc4random_uniform(UInt32(4))
-        print(randomIntForTypeOfQuestionAssignment)
-        switch randomIntForTypeOfQuestionAssignment {
+        randomInt = arc4random_uniform(UInt32(3))
+        print(randomInt)
+        switch randomInt {
         case 0:
             selectDWEntryEnglishText(i)
         case 1:
             selectDWEntryOjibweText(i)
         case 2:
-            selectDWEntryTypeText(i)
-        case 3:
             selectDWEntryTypeText(i)
         default:
             break
@@ -110,8 +107,8 @@ class QuizQuestion: NSObject {
     }
     
     func selectDWEntryEnglishText(i: DictionaryWordEntry) {
-        randomIntForQuestionAssignment = arc4random_uniform(UInt32(4))
-        switch randomIntForQuestionAssignment {
+        randomInt = arc4random_uniform(UInt32(4))
+        switch randomInt {
         case 0:
             self.objectAnswerOneText = i.english!
         case 1:
@@ -126,8 +123,8 @@ class QuizQuestion: NSObject {
     }
     
     func selectDWEntryOjibweText(i: DictionaryWordEntry) {
-        randomIntForQuestionAssignment = arc4random_uniform(UInt32(4))
-        switch randomIntForQuestionAssignment {
+        randomInt = arc4random_uniform(UInt32(4))
+        switch randomInt {
         case 0:
             self.objectAnswerOneText = i.ojibwe!
         case 1:
@@ -142,8 +139,8 @@ class QuizQuestion: NSObject {
     }
     
     func selectDWEntryTypeText(i: DictionaryWordEntry) {
-        randomIntForQuestionAssignment = arc4random_uniform(UInt32(4))
-        switch randomIntForQuestionAssignment {
+        randomInt = arc4random_uniform(UInt32(4))
+        switch randomInt {
         case 0:
             self.objectAnswerOneText = typeQuestionFullText(i.subtype!)
         case 1:
@@ -183,12 +180,6 @@ class QuizQuestion: NSObject {
     
 }
 
-/* Extension for Array from (*website is bookmarked*), used to shuffle Array. Gave error ~'type () does not conform to Protocol SequenceType'
-extension Array {
-    mutating func shuffle() {
-        for i in  0 ..< (count - 1) {
-            let j = Int(arc4random_uniform(UInt32(count - 1))) + i
-            swap(&self[i], &self[j])
-        }
-    }
-}*/
+
+
+
