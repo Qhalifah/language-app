@@ -44,8 +44,10 @@ class QuizObject: NSObject {
     
     var questionWordsArray: Array<DictionaryWordEntry> = []
     var questionArray: Array<QuizQuestion> = []
+    var wrongAnswersDictArray: Array<Array<DictionaryWordEntry>> = []
     
     var rand: UInt32 = 0
+    var randWrong: UInt32 = 0
     
     init(dictionaryArry: Array<DictionaryWordEntry>) {
         super.init()
@@ -54,28 +56,43 @@ class QuizObject: NSObject {
         //change range value here depending on # of questions being asked in each quiz.
         for i in 0...9 {
             rand = arc4random_uniform(UInt32(dictionaryArry.count))
-            questionWordsArray.append(dictionaryArry[Int(rand)])
+            var array: Array<DictionaryWordEntry> = []
             print("i: \(i)            rand: \(rand)")
+            
+            for i in 0...2 {
+                randWrong = arc4random_uniform(UInt32(dictionaryArry.count))
+                while randWrong == rand {
+                    randWrong = arc4random_uniform(UInt32(dictionaryArry.count))
+                }
+                array.append(dictionaryArry[Int(randWrong)])
+                print("Second `For` - i: \(i)            rand: \(randWrong)")
+            }
+            
+            wrongAnswersDictArray.append(array)
+            questionWordsArray.append(dictionaryArry[Int(rand)])
+            
         }
         print("SPLIT!")
         
+        var i = 0
         for dWE in questionWordsArray {
-            let individualQuestion = QuizQuestion(i: dWE)
+            let individualQuestion = QuizQuestion(i: dWE, j: wrongAnswersDictArray[i])
             questionArray.append(individualQuestion)
+            i = i + 1
         }
+        
         print("SPLIT!")
         
         for question in questionArray {
             print("\(question.objectAnswerOneText), \(question.objectAnswerTwoText),  \(question.objectAnswerThreeText),  \(question.objectAnswerFourText): \(question.randomInt + 1)")
             
         }
+        
     }
     
 }
 
 class QuizQuestion: NSObject {
-
-    var notQuiteRightErrorArray: [[String]] = [[],["was", "want it to be", "are", "were"]]
     
     var objectQuestionText: String = ""
     var objectAnswerOneText: String = ""
@@ -86,27 +103,27 @@ class QuizQuestion: NSObject {
     var randomInt: UInt32 = 0
   
     //Dict word entry is formatted as dictionaryArray.usableDictionaryArray[index].english||ojibwe||type||subtype
-    init(i: DictionaryWordEntry) {
+    init(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         super.init()
-        correctAnswerAssignment(i)
+        correctAnswerAssignment(i,j: j)
         
     }
-    func correctAnswerAssignment(i:DictionaryWordEntry) {
+    func correctAnswerAssignment(i:DictionaryWordEntry, j:Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(3))
         print(randomInt)
         switch randomInt {
         case 0:
-            selectDWEntryEnglishText(i)
+            selectDWEntryEnglishText(i, j: j)
         case 1:
-            selectDWEntryOjibweText(i)
+            selectDWEntryOjibweText(i, j: j)
         case 2:
-            selectDWEntryTypeText(i)
+            selectDWEntryTypeText(i, j: j)
         default:
             break
         }
     }
     
-    func selectDWEntryEnglishText(i: DictionaryWordEntry) {
+    func selectDWEntryEnglishText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
         switch randomInt {
         case 0:
@@ -120,9 +137,26 @@ class QuizQuestion: NSObject {
         default:
             break
         }
+        var count = 0
+        if self.objectAnswerOneText == "" {
+            self.objectAnswerOneText = j[count].english!
+            count += 1
+        }
+        if self.objectAnswerTwoText == "" {
+            self.objectAnswerTwoText = j[count].english!
+            count += 1
+        }
+        if self.objectAnswerThreeText == "" {
+            self.objectAnswerThreeText = j[count].english!
+            count += 1
+        }
+        if self.objectAnswerFourText == "" {
+            self.objectAnswerFourText = j[count].english!
+        }
+        
     }
     
-    func selectDWEntryOjibweText(i: DictionaryWordEntry) {
+    func selectDWEntryOjibweText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
         switch randomInt {
         case 0:
@@ -136,9 +170,26 @@ class QuizQuestion: NSObject {
         default:
             break
         }
+        
+        var count = 0
+        if self.objectAnswerOneText == "" {
+            self.objectAnswerOneText = j[count].ojibwe!
+            count += 1
+        }
+        if self.objectAnswerTwoText == "" {
+            self.objectAnswerTwoText = j[count].ojibwe!
+            count += 1
+        }
+        if self.objectAnswerThreeText == "" {
+            self.objectAnswerThreeText = j[count].ojibwe!
+            count += 1
+        }
+        if self.objectAnswerFourText == "" {
+            self.objectAnswerFourText = j[count].ojibwe!
+        }
     }
     
-    func selectDWEntryTypeText(i: DictionaryWordEntry) {
+    func selectDWEntryTypeText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
         switch randomInt {
         case 0:
@@ -152,6 +203,25 @@ class QuizQuestion: NSObject {
         default:
             break
         }
+        
+        var count = 0
+        if self.objectAnswerOneText == "" {
+            self.objectAnswerOneText = typeQuestionFullText(j[count].subtype!)
+            count += 1
+        }
+        if self.objectAnswerTwoText == "" {
+            self.objectAnswerTwoText = typeQuestionFullText(j[count].subtype!)
+            count += 1
+        }
+        if self.objectAnswerThreeText == "" {
+            self.objectAnswerThreeText = typeQuestionFullText(j[count].subtype!)
+            count += 1
+        }
+        if self.objectAnswerFourText == "" {
+            self.objectAnswerFourText = typeQuestionFullText(j[count].subtype!)
+        }
+        
+        
     }
     
     func typeQuestionFullText(typeText: String) -> String {
