@@ -31,10 +31,10 @@ class QuizzesViewController: UIViewController {
         print(quiz)
         
         self.questionText.text = "\(quiz.questionArray[1].objectQuestionText) : \(quiz.questionArray[1].correctAnswer)"
-        self.answerOneText.text = quiz.questionArray[1].objectAnswerOneText
-        self.answerTwoText.text = quiz.questionArray[1].objectAnswerTwoText
-        self.answerThreeText.text = quiz.questionArray[1].objectAnswerThreeText
-        self.answerFourText.text = quiz.questionArray[1].objectAnswerFourText
+        self.answerOneText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[0]
+        self.answerTwoText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[1]
+        self.answerThreeText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[2]
+        self.answerFourText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[3]
     }
     
     
@@ -104,7 +104,11 @@ class QuizQuestion: NSObject {
     var objectAnswerFourText: String = ""
     var correctAnswer: Int = 0
     
+    var QuizQuestionsOneThroughFour: [String] = [" ", " ", " ", " "]
+    
     var randomInt: UInt32 = 0
+    var otherRandomInt: UInt32 = 0
+    let verbSubtypes: [String] = ["ii", "ai", "ti", "ta"]
   
     //Dict word entry is formatted as dictionaryArray.usableDictionaryArray[index].english||ojibwe||type||subtype
     init(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
@@ -121,7 +125,7 @@ class QuizQuestion: NSObject {
         case 1:
             selectDWEntryOjibweText(i, j: j)
         case 2:
-            selectDWEntryTypeText(i, j: j)
+            selectDWEntryTypeText(i)
         default:
             break
         }
@@ -130,33 +134,14 @@ class QuizQuestion: NSObject {
     func selectDWEntryEnglishText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
         self.correctAnswer = Int(randomInt)
-        switch randomInt {
-        case 0:
-            self.objectAnswerOneText = i.english!
-        case 1:
-            self.objectAnswerTwoText = i.english!
-        case 2:
-            self.objectAnswerThreeText = i.english!
-        case 3:
-            self.objectAnswerFourText = i.english!
-        default:
-            break
-        }
+        self.QuizQuestionsOneThroughFour[Int(randomInt)] = i.english!
+
         var count = 0
-        if self.objectAnswerOneText == "" {
-            self.objectAnswerOneText = j[count].english!
-            count += 1
-        }
-        if self.objectAnswerTwoText == "" {
-            self.objectAnswerTwoText = j[count].english!
-            count += 1
-        }
-        if self.objectAnswerThreeText == "" {
-            self.objectAnswerThreeText = j[count].english!
-            count += 1
-        }
-        if self.objectAnswerFourText == "" {
-            self.objectAnswerFourText = j[count].english!
+        for i in 0...Int(QuizQuestionsOneThroughFour.count) {
+            if self.QuizQuestionsOneThroughFour[i] == " " {
+                self.QuizQuestionsOneThroughFour[i] = j[count].english!
+                count += 1
+            }
         }
         
         self.objectQuestionText = "What is \(i.ojibwe!) in english?"
@@ -166,70 +151,67 @@ class QuizQuestion: NSObject {
     func selectDWEntryOjibweText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
         self.correctAnswer = Int(randomInt)
-        switch randomInt {
-        case 0:
-            self.objectAnswerOneText = i.ojibwe!
-        case 1:
-            self.objectAnswerTwoText = i.ojibwe!
-        case 2:
-            self.objectAnswerThreeText = i.ojibwe!
-        case 3:
-            self.objectAnswerFourText = i.ojibwe!
-        default:
-            break
-        }
+        
+        
+        
+        self.QuizQuestionsOneThroughFour[Int(randomInt)] = i.ojibwe!
         
         var count = 0
-        if self.objectAnswerOneText == "" {
-            self.objectAnswerOneText = j[count].ojibwe!
-            count += 1
-        }
-        if self.objectAnswerTwoText == "" {
-            self.objectAnswerTwoText = j[count].ojibwe!
-            count += 1
-        }
-        if self.objectAnswerThreeText == "" {
-            self.objectAnswerThreeText = j[count].ojibwe!
-            count += 1
-        }
-        if self.objectAnswerFourText == "" {
-            self.objectAnswerFourText = j[count].ojibwe!
+        for k in 0...QuizQuestionsOneThroughFour.count {
+            if self.QuizQuestionsOneThroughFour[k] == " " {
+                self.QuizQuestionsOneThroughFour[k] = j[count].ojibwe!
+                count += 1
+            }
         }
         
         self.objectQuestionText = "What is \(i.english!) in Ojibwe?"
     }
     
-    func selectDWEntryTypeText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
+    func selectDWEntryTypeText(i: DictionaryWordEntry) {
         randomInt = arc4random_uniform(UInt32(4))
         self.correctAnswer = Int(randomInt)
-        switch randomInt {
-        case 0:
-            self.objectAnswerOneText = typeQuestionFullText(i.subtype!)
-        case 1:
-            self.objectAnswerTwoText = typeQuestionFullText(i.subtype!)
-        case 2:
-            self.objectAnswerThreeText = typeQuestionFullText(i.subtype!)
-        case 3:
-            self.objectAnswerFourText = typeQuestionFullText(i.subtype!)
-        default:
-            break
-        }
         
-        var count = 0
-        if self.objectAnswerOneText == "" {
-            self.objectAnswerOneText = typeQuestionFullText(j[count].subtype!)
-            count += 1
+        self.QuizQuestionsOneThroughFour[Int(randomInt)] = typeQuestionFullText(i.subtype!)
+        
+        if i.type == "noun" {
+            switch i.subtype! {
+            case "ani":
+                for k in 0...QuizQuestionsOneThroughFour.count {
+                    if self.QuizQuestionsOneThroughFour[k] == " " {
+                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("inani")
+                    }
+                }
+            case "inani":
+                for k in 0...QuizQuestionsOneThroughFour.count {
+                    if self.QuizQuestionsOneThroughFour[k] == " " {
+                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("ani")
+                    }
+                }
+            default: break
+            }
         }
-        if self.objectAnswerTwoText == "" {
-            self.objectAnswerTwoText = typeQuestionFullText(j[count].subtype!)
-            count += 1
-        }
-        if self.objectAnswerThreeText == "" {
-            self.objectAnswerThreeText = typeQuestionFullText(j[count].subtype!)
-            count += 1
-        }
-        if self.objectAnswerFourText == "" {
-            self.objectAnswerFourText = typeQuestionFullText(j[count].subtype!)
+        else if i.type == "verb" {
+            switch i.subtype! {
+            case "ii":
+                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
+                    if self.QuizQuestionsOneThroughFour[k] == " " {
+                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ii")])
+                    }
+                }
+            case "ai":
+                for k in 0...QuizQuestionsOneThroughFour.count {
+                    if self.QuizQuestionsOneThroughFour[k] == " " {
+                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ai")])
+                    }
+                }
+            case "ta":
+                for k in 0...QuizQuestionsOneThroughFour.count {
+                    if self.QuizQuestionsOneThroughFour[k] == " " {
+                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ta")])
+                    }
+                }
+            default: break
+            }
         }
         
         self.objectQuestionText = "What type of \((i.type)!.capitalizedString) is \(i.ojibwe!)?"
@@ -257,7 +239,13 @@ class QuizQuestion: NSObject {
     }
     
     
-    
+    func checkVerbTypeEquallcy(i: String) -> Int {
+        self.randomInt = arc4random_uniform(UInt32(4))
+        while verbSubtypes[Int(randomInt)] == i {
+            self.randomInt = arc4random_uniform(UInt32(4))
+        }
+        return Int(self.randomInt)
+    }
     
 }
 
