@@ -137,7 +137,7 @@ class QuizQuestion: NSObject {
         self.QuizQuestionsOneThroughFour[Int(randomInt)] = i.english!
 
         var count = 0
-        for i in 0...Int(QuizQuestionsOneThroughFour.count) {
+        for i in 0...(QuizQuestionsOneThroughFour.count - 1) {
             if self.QuizQuestionsOneThroughFour[i] == " " {
                 self.QuizQuestionsOneThroughFour[i] = j[count].english!
                 count += 1
@@ -157,7 +157,7 @@ class QuizQuestion: NSObject {
         self.QuizQuestionsOneThroughFour[Int(randomInt)] = i.ojibwe!
         
         var count = 0
-        for k in 0...QuizQuestionsOneThroughFour.count {
+        for k in 0...QuizQuestionsOneThroughFour.count - 1 {
             if self.QuizQuestionsOneThroughFour[k] == " " {
                 self.QuizQuestionsOneThroughFour[k] = j[count].ojibwe!
                 count += 1
@@ -176,13 +176,13 @@ class QuizQuestion: NSObject {
         if i.type == "noun" {
             switch i.subtype! {
             case "ani":
-                for k in 0...QuizQuestionsOneThroughFour.count {
+                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
                     if self.QuizQuestionsOneThroughFour[k] == " " {
                         self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("inani")
                     }
                 }
             case "inani":
-                for k in 0...QuizQuestionsOneThroughFour.count {
+                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
                     if self.QuizQuestionsOneThroughFour[k] == " " {
                         self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("ani")
                     }
@@ -199,13 +199,13 @@ class QuizQuestion: NSObject {
                     }
                 }
             case "ai":
-                for k in 0...QuizQuestionsOneThroughFour.count {
+                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
                     if self.QuizQuestionsOneThroughFour[k] == " " {
                         self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ai")])
                     }
                 }
             case "ta":
-                for k in 0...QuizQuestionsOneThroughFour.count {
+                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
                     if self.QuizQuestionsOneThroughFour[k] == " " {
                         self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ta")])
                     }
