@@ -12,6 +12,7 @@ import UIKit
 class QuizzesViewController: UIViewController {
     
     var DictionaryArray: Array<DictionaryWordEntry> = []
+    var classSizeQuiz: QuizObject = QuizObject(dictionaryArry: nil)
     
     @IBOutlet weak var questionText: UILabel!
     
@@ -28,6 +29,7 @@ class QuizzesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let quiz = QuizObject(dictionaryArry: DictionaryArray)
+        self.classSizeQuiz = quiz
         
         self.questionText.text = "\(quiz.questionArray[1].objectQuestionText) : \(quiz.questionArray[1].correctAnswer)"
         self.answerOneText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[0]
@@ -49,7 +51,69 @@ class QuizzesViewController: UIViewController {
         }
     }
     
+    @IBAction func answerOneFunction(sender: AnyObject) {
+        
+        answerCheckFunction(correctAnswerNumber())
+    }
     
+    @IBAction func answerTwoFunction(sender: AnyObject) {
+        answerCheckFunction(correctAnswerNumber())
+    }
+
+    @IBAction func answerThreeFunction(sender: AnyObject) {
+        answerCheckFunction(correctAnswerNumber())
+    }
+    
+    @IBAction func answerFourFunction(sender: AnyObject) {
+        answerCheckFunction(correctAnswerNumber())
+    }
+    
+    func answerCheckFunction(buttonNumber: Int) {
+        
+        UIView.animateWithDuration(2, animations: {
+            self.answerOneButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            self.answerTwoButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            self.answerThreeButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            self.answerFourButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            
+            switch buttonNumber {
+            case 1:
+                self.answerOneButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerOneButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+            case 2:
+                self.answerTwoButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerTwoButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+            case 3:
+                self.answerThreeButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerThreeButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+            case 4:
+                self.answerFourButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerFourButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+            default: break
+            }
+    
+        })
+        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: {
+            switch buttonNumber {
+            case 1:
+                self.answerOneButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            case 2:
+                self.answerTwoButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            case 3:
+                self.answerThreeButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            case 4:
+                self.answerFourButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            default: break }
+            }, completion:  {
+                (value: Bool) in
+                self.answerOneButton.currentTitleColor == UIColor.greenColor() || self.answerOneButton.currentTitleColor == UIColor.redColor()
+                
+        })
+    }
+    
+    func correctAnswerNumber () -> Int {
+        return (classSizeQuiz.questionArray[1].correctAnswer + 1)
+    }
     
     
 }
@@ -63,31 +127,35 @@ class QuizObject: NSObject {
     var rand: UInt32 = 0
     var randWrong: UInt32 = 0
     
-    init(dictionaryArry: Array<DictionaryWordEntry>) {
+    init(dictionaryArry: Array<DictionaryWordEntry>?) {
         super.init()
-        
-        for _ in 0...9 {
-            rand = arc4random_uniform(UInt32(dictionaryArry.count))
-            var array: Array<DictionaryWordEntry> = []
+        if dictionaryArry == nil {
+            print("Recived nil from dictionaryArray in QuizObject")
+        }
+        else {
+            for _ in 0...9 {
             
-            for _ in 0...2 {
-                randWrong = arc4random_uniform(UInt32(dictionaryArry.count))
-                while randWrong == rand {
-                    randWrong = arc4random_uniform(UInt32(dictionaryArry.count))
+                rand = arc4random_uniform(UInt32(dictionaryArry!.count))
+                var array: Array<DictionaryWordEntry> = []
+            
+                for _ in 0...2 {
+                    randWrong = arc4random_uniform(UInt32(dictionaryArry!.count))
+                    while randWrong == rand {
+                        randWrong = arc4random_uniform(UInt32(dictionaryArry!.count))
+                    }
+                    array.append(dictionaryArry![Int(randWrong)])
                 }
-                array.append(dictionaryArry[Int(randWrong)])
+            
+                wrongAnswersDictArray.append(array)
+                questionWordsArray.append(dictionaryArry![Int(rand)])
             }
             
-            wrongAnswersDictArray.append(array)
-            questionWordsArray.append(dictionaryArry[Int(rand)])
-            
-        }
-        
-        var i = 0
-        for dWE in questionWordsArray {
-            let individualQuestion = QuizQuestion(i: dWE, j: wrongAnswersDictArray[i])
-            questionArray.append(individualQuestion)
-            i = i + 1
+            var i = 0
+            for dWE in questionWordsArray {
+                let individualQuestion = QuizQuestion(i: dWE, j: wrongAnswersDictArray[i])
+                questionArray.append(individualQuestion)
+                i = i + 1
+            }
         }
         
     }
@@ -175,59 +243,11 @@ class QuizQuestion: NSObject {
         if i.type == "noun" {
             self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("ani")
             self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("inani")
-//            case "ani":
-//                if self.QuizQuestionsOneThroughFour[0] == " " {
-//                    self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("inani")
-//                    self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("ani")
-//                }
-//                else if self.QuizQuestionsOneThroughFour[0] == "ani" {
-//                    self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("inani")
-//                }
-//                else if self.QuizQuestionsOneThroughFour[1] == "ani" {
-//                    self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("inani")
-//                }
-//                else if self.QuizQuestionsOneThroughFour[1] == " " {
-//                    self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("inani")
-//                }
-//                
-//            case "inani":
-//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-//                    if self.QuizQuestionsOneThroughFour[k] == " " {
-//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("ani")
-//                    }
-//                }
                 
             self.correctAnswer = correctAnswerIntReturn(i)
             
         }
         else if i.type == "verb" {
-//            switch i.subtype! {
-//            case "ii":
-//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-//                    if self.QuizQuestionsOneThroughFour[k] == " " {
-//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ii")])
-//                    }
-//                }
-//            case "ai":
-//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-//                    if self.QuizQuestionsOneThroughFour[k] == " " {
-//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ai")])
-//                    }
-//                }
-//            case "ta":
-//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-//                    if self.QuizQuestionsOneThroughFour[k] == " " {
-//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ti")])
-//                    }
-//                }
-//            case "ti":
-//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-//                    if self.QuizQuestionsOneThroughFour[k] == " " {
-//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ta")])
-//                    }
-//                }
-//            default: break
-//            }
             
             self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("ii")
             self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("ai")

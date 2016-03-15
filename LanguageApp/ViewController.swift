@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var goToQuizzes: UIButton!
     @IBOutlet weak var chartBarButton: UIBarButtonItem!
     
-    
     var testDictionaryArray: Array<DictionaryWordEntry> = []
 
     override func viewDidLoad() {
