@@ -28,13 +28,25 @@ class QuizzesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let quiz = QuizObject(dictionaryArry: DictionaryArray)
-        print(quiz)
         
         self.questionText.text = "\(quiz.questionArray[1].objectQuestionText) : \(quiz.questionArray[1].correctAnswer)"
         self.answerOneText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[0]
         self.answerTwoText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[1]
         self.answerThreeText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[2]
         self.answerFourText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[3]
+        
+        if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Animate" {
+            self.answerThreeButton.alpha = 0.0
+            self.answerFourButton.alpha = 0.0
+            self.answerFourText.alpha = 0.0
+            self.answerThreeText.alpha = 0.0
+        }
+        else if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Inanimate" {
+            self.answerThreeButton.alpha = 0.0
+            self.answerFourButton.alpha = 0.0
+            self.answerThreeText.alpha = 0.0
+            self.answerFourText.alpha = 0.0
+        }
     }
     
     
@@ -53,41 +65,29 @@ class QuizObject: NSObject {
     
     init(dictionaryArry: Array<DictionaryWordEntry>) {
         super.init()
-        //shuffle OjibweEnglishDictionary
         
-        //change range value here depending on # of questions being asked in each quiz.
-        for i in 0...9 {
+        for _ in 0...9 {
             rand = arc4random_uniform(UInt32(dictionaryArry.count))
             var array: Array<DictionaryWordEntry> = []
-            print("i: \(i)            rand: \(rand)")
             
-            for i in 0...2 {
+            for _ in 0...2 {
                 randWrong = arc4random_uniform(UInt32(dictionaryArry.count))
                 while randWrong == rand {
                     randWrong = arc4random_uniform(UInt32(dictionaryArry.count))
                 }
                 array.append(dictionaryArry[Int(randWrong)])
-                print("Second `For` - i: \(i)            rand: \(randWrong)")
             }
             
             wrongAnswersDictArray.append(array)
             questionWordsArray.append(dictionaryArry[Int(rand)])
             
         }
-        print("SPLIT!")
         
         var i = 0
         for dWE in questionWordsArray {
             let individualQuestion = QuizQuestion(i: dWE, j: wrongAnswersDictArray[i])
             questionArray.append(individualQuestion)
             i = i + 1
-        }
-        
-        print("SPLIT!")
-        
-        for question in questionArray {
-            print("\(question.objectAnswerOneText), \(question.objectAnswerTwoText),  \(question.objectAnswerThreeText),  \(question.objectAnswerFourText): \(question.randomInt + 1)")
-            
         }
         
     }
@@ -118,7 +118,6 @@ class QuizQuestion: NSObject {
     }
     func questionAssignment(i:DictionaryWordEntry, j:Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(3))
-        print(randomInt)
         switch randomInt {
         case 0:
             selectDWEntryEnglishText(i, j: j)
@@ -174,44 +173,68 @@ class QuizQuestion: NSObject {
         self.QuizQuestionsOneThroughFour[Int(randomInt)] = typeQuestionFullText(i.subtype!)
         
         if i.type == "noun" {
-            switch i.subtype! {
-            case "ani":
-                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-                    if self.QuizQuestionsOneThroughFour[k] == " " {
-                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("inani")
-                    }
-                }
-            case "inani":
-                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-                    if self.QuizQuestionsOneThroughFour[k] == " " {
-                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("ani")
-                    }
-                }
-            default: break
-            }
+            self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("ani")
+            self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("inani")
+//            case "ani":
+//                if self.QuizQuestionsOneThroughFour[0] == " " {
+//                    self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("inani")
+//                    self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("ani")
+//                }
+//                else if self.QuizQuestionsOneThroughFour[0] == "ani" {
+//                    self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("inani")
+//                }
+//                else if self.QuizQuestionsOneThroughFour[1] == "ani" {
+//                    self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("inani")
+//                }
+//                else if self.QuizQuestionsOneThroughFour[1] == " " {
+//                    self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("inani")
+//                }
+//                
+//            case "inani":
+//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
+//                    if self.QuizQuestionsOneThroughFour[k] == " " {
+//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText("ani")
+//                    }
+//                }
+                
+            self.correctAnswer = correctAnswerIntReturn(i)
+            
         }
         else if i.type == "verb" {
-            switch i.subtype! {
-            case "ii":
-                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-                    if self.QuizQuestionsOneThroughFour[k] == " " {
-                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ii")])
-                    }
-                }
-            case "ai":
-                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-                    if self.QuizQuestionsOneThroughFour[k] == " " {
-                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ai")])
-                    }
-                }
-            case "ta":
-                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
-                    if self.QuizQuestionsOneThroughFour[k] == " " {
-                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ta")])
-                    }
-                }
-            default: break
-            }
+//            switch i.subtype! {
+//            case "ii":
+//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
+//                    if self.QuizQuestionsOneThroughFour[k] == " " {
+//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ii")])
+//                    }
+//                }
+//            case "ai":
+//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
+//                    if self.QuizQuestionsOneThroughFour[k] == " " {
+//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ai")])
+//                    }
+//                }
+//            case "ta":
+//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
+//                    if self.QuizQuestionsOneThroughFour[k] == " " {
+//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ti")])
+//                    }
+//                }
+//            case "ti":
+//                for k in 0...QuizQuestionsOneThroughFour.count - 1 {
+//                    if self.QuizQuestionsOneThroughFour[k] == " " {
+//                        self.QuizQuestionsOneThroughFour[k] = typeQuestionFullText(verbSubtypes[checkVerbTypeEquallcy("ta")])
+//                    }
+//                }
+//            default: break
+//            }
+            
+            self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("ii")
+            self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("ai")
+            self.QuizQuestionsOneThroughFour[2] = typeQuestionFullText("ti")
+            self.QuizQuestionsOneThroughFour[3] = typeQuestionFullText("ta")
+            
+            self.correctAnswer = correctAnswerIntReturn(i)
         }
         
         self.objectQuestionText = "What type of \((i.type)!.capitalizedString) is \(i.ojibwe!)?"
@@ -245,6 +268,27 @@ class QuizQuestion: NSObject {
             self.randomInt = arc4random_uniform(UInt32(4))
         }
         return Int(self.randomInt)
+    }
+    
+    func correctAnswerIntReturn(i: DictionaryWordEntry) -> Int {
+        var int = 0
+        switch i.subtype! {
+        case "ani":
+            int = 1
+        case "inani":
+            int = 2
+        case "ii":
+            int = 1
+        case "ai":
+            int = 2
+        case "ti":
+            int = 3
+        case "ta":
+            int = 4
+        default:
+            break
+        }
+        return int
     }
     
 }
