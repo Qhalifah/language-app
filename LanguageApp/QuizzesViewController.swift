@@ -93,26 +93,27 @@ class QuizzesViewController: UIViewController {
             }
     
         })
-        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: {
+        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: {
             switch buttonNumber {
             case 1:
-                self.answerOneButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerOneButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
             case 2:
-                self.answerTwoButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerTwoButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
             case 3:
-                self.answerThreeButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerThreeButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
             case 4:
-                self.answerFourButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                self.answerFourButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
             default: break }
             }, completion:  {
                 (value: Bool) in
-                self.answerOneButton.currentTitleColor == UIColor.greenColor() || self.answerOneButton.currentTitleColor == UIColor.redColor()
+                if self.answerOneButton.currentTitleColor == UIColor.greenColor() ||
+                    self.answerOneButton.currentTitleColor == UIColor.redColor() {}
                 
         })
     }
     
     func correctAnswerNumber () -> Int {
-        return (classSizeQuiz.questionArray[1].correctAnswer + 1)
+        return (classSizeQuiz.questionArray[1].correctAnswer)
     }
     
     
@@ -200,7 +201,8 @@ class QuizQuestion: NSObject {
     
     func selectDWEntryEnglishText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
-        self.correctAnswer = Int(randomInt)
+        print("\(randomInt) : English")
+        self.correctAnswer = (Int(randomInt) + 1)
         self.QuizQuestionsOneThroughFour[Int(randomInt)] = i.english!
 
         var count = 0
@@ -217,7 +219,8 @@ class QuizQuestion: NSObject {
     
     func selectDWEntryOjibweText(i: DictionaryWordEntry, j: Array<DictionaryWordEntry>) {
         randomInt = arc4random_uniform(UInt32(4))
-        self.correctAnswer = Int(randomInt)
+        print("\(randomInt) : Ojibwe")
+        self.correctAnswer = (Int(randomInt) + 1)
         
         
         
@@ -235,16 +238,13 @@ class QuizQuestion: NSObject {
     }
     
     func selectDWEntryTypeText(i: DictionaryWordEntry) {
-        randomInt = arc4random_uniform(UInt32(4))
-        self.correctAnswer = Int(randomInt)
-        
-        self.QuizQuestionsOneThroughFour[Int(randomInt)] = typeQuestionFullText(i.subtype!)
         
         if i.type == "noun" {
             self.QuizQuestionsOneThroughFour[0] = typeQuestionFullText("ani")
             self.QuizQuestionsOneThroughFour[1] = typeQuestionFullText("inani")
                 
             self.correctAnswer = correctAnswerIntReturn(i)
+            print("\(correctAnswerIntReturn(i)) : Type")
             
         }
         else if i.type == "verb" {
@@ -255,6 +255,8 @@ class QuizQuestion: NSObject {
             self.QuizQuestionsOneThroughFour[3] = typeQuestionFullText("ta")
             
             self.correctAnswer = correctAnswerIntReturn(i)
+            print("\(correctAnswerIntReturn(i)) : Type")
+            
         }
         
         self.objectQuestionText = "What type of \((i.type)!.capitalizedString) is \(i.ojibwe!)?"
@@ -281,34 +283,24 @@ class QuizQuestion: NSObject {
         return text
     }
     
-    
-    func checkVerbTypeEquallcy(i: String) -> Int {
-        self.randomInt = arc4random_uniform(UInt32(4))
-        while verbSubtypes[Int(randomInt)] == i {
-            self.randomInt = arc4random_uniform(UInt32(4))
-        }
-        return Int(self.randomInt)
-    }
-    
     func correctAnswerIntReturn(i: DictionaryWordEntry) -> Int {
-        var int = 0
         switch i.subtype! {
         case "ani":
-            int = 1
+            return 1
         case "inani":
-            int = 2
+            return 2
         case "ii":
-            int = 1
+            return 1
         case "ai":
-            int = 2
+            return 2
         case "ti":
-            int = 3
+            return 3
         case "ta":
-            int = 4
+            return 4
         default:
-            break
+            return 5
         }
-        return int
+        //return (int)
     }
     
 }
