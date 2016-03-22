@@ -13,6 +13,7 @@ class QuizzesViewController: UIViewController {
     
     var DictionaryArray: Array<DictionaryWordEntry> = []
     var classSizeQuiz: QuizObject = QuizObject(dictionaryArry: nil)
+    var questionUserIsOnCount: Int = 0
     
     @IBOutlet weak var questionText: UILabel!
     
@@ -26,29 +27,14 @@ class QuizzesViewController: UIViewController {
     @IBOutlet weak var answerThreeButton: UIButton!
     @IBOutlet weak var answerFourButton: UIButton!
     
+    @IBOutlet weak var nextQuestionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let quiz = QuizObject(dictionaryArry: DictionaryArray)
-        self.classSizeQuiz = quiz
         
-        self.questionText.text = "\(quiz.questionArray[1].objectQuestionText) : \(quiz.questionArray[1].correctAnswer)"
-        self.answerOneText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[0]
-        self.answerTwoText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[1]
-        self.answerThreeText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[2]
-        self.answerFourText.text = quiz.questionArray[1].QuizQuestionsOneThroughFour[3]
         
-        if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Animate" {
-            self.answerThreeButton.alpha = 0.0
-            self.answerFourButton.alpha = 0.0
-            self.answerFourText.alpha = 0.0
-            self.answerThreeText.alpha = 0.0
-        }
-        else if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Inanimate" {
-            self.answerThreeButton.alpha = 0.0
-            self.answerFourButton.alpha = 0.0
-            self.answerThreeText.alpha = 0.0
-            self.answerFourText.alpha = 0.0
-        }
+        nextQuestionButtonActionFunction()
+        
     }
     
     @IBAction func answerOneFunction(sender: AnyObject) {
@@ -66,6 +52,44 @@ class QuizzesViewController: UIViewController {
     
     @IBAction func answerFourFunction(sender: AnyObject) {
         answerCheckFunction(correctAnswerNumber())
+    }
+    
+    
+    @IBAction func nextQuestionButtonAction(sender: AnyObject) {
+        while (questionUserIsOnCount <= 9) {
+            self.questionUserIsOnCount += 1
+            nextQuestionButtonActionFunction()
+        }
+    }
+    
+    func nextQuestionButtonActionFunction() {
+        let quiz = QuizObject(dictionaryArry: DictionaryArray)
+        self.classSizeQuiz = quiz
+        
+        self.questionText.text = quiz.questionArray[questionUserIsOnCount].objectQuestionText
+        self.answerOneText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[0]
+        self.answerTwoText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[1]
+        self.answerThreeText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[2]
+        self.answerFourText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[3]
+        
+        if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Animate" {
+            self.answerThreeButton.alpha = 0.0
+            self.answerFourButton.alpha = 0.0
+            self.answerFourText.alpha = 0.0
+            self.answerThreeText.alpha = 0.0
+        }
+        else if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Inanimate" {
+            self.answerThreeButton.alpha = 0.0
+            self.answerFourButton.alpha = 0.0
+            self.answerThreeText.alpha = 0.0
+            self.answerFourText.alpha = 0.0
+        }
+        else {
+            self.answerThreeButton.alpha = 1.0
+            self.answerFourButton.alpha = 1.0
+            self.answerThreeText.alpha = 1.0
+            self.answerFourText.alpha = 1.0
+        }
     }
     
     func answerCheckFunction(buttonNumber: Int) {
@@ -117,6 +141,7 @@ class QuizzesViewController: UIViewController {
     }
     
     
+    
 }
 
 class QuizObject: NSObject {
@@ -166,13 +191,7 @@ class QuizObject: NSObject {
 class QuizQuestion: NSObject {
     
     var objectQuestionText: String = ""
-    
-    var objectAnswerOneText: String = ""
-    var objectAnswerTwoText:String = ""
-    var objectAnswerThreeText: String = ""
-    var objectAnswerFourText: String = ""
     var correctAnswer: Int = 0
-    
     var QuizQuestionsOneThroughFour: [String] = [" ", " ", " ", " "]
     
     var randomInt: UInt32 = 0
