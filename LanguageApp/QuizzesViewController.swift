@@ -12,7 +12,7 @@ import UIKit
 class QuizzesViewController: UIViewController {
     
     var DictionaryArray: Array<DictionaryWordEntry> = []
-    var classSizeQuiz: QuizObject = QuizObject(dictionaryArry: nil)
+    var classQuiz: QuizObject = QuizObject(dictionaryArry: nil)
     var questionUserIsOnCount: Int = 0
     
     @IBOutlet weak var questionText: UILabel!
@@ -29,11 +29,19 @@ class QuizzesViewController: UIViewController {
     
     @IBOutlet weak var nextQuestionButton: UIButton!
     
+    @IBOutlet weak var totalQuestionNumber: UILabel!
+    @IBOutlet weak var totalQuestionsCorrect: UILabel!
+    var totalQuestionsCorrectCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let quiz = QuizObject(dictionaryArry: DictionaryArray)
         
-        nextQuestionButtonActionFunction()
+        self.classQuiz = quiz
+        self.totalQuestionNumber.text = String(self.questionUserIsOnCount + 1)
+        self.totalQuestionsCorrect.text = String(self.totalQuestionsCorrectCount)
+        questionActionFunction()
         
     }
     
@@ -56,40 +64,44 @@ class QuizzesViewController: UIViewController {
     
     
     @IBAction func nextQuestionButtonAction(sender: AnyObject) {
-        while (questionUserIsOnCount <= 9) {
+        if questionUserIsOnCount <= 8 {
             self.questionUserIsOnCount += 1
-            nextQuestionButtonActionFunction()
+            self.totalQuestionNumber.text = String(self.questionUserIsOnCount + 1)
+            questionActionFunction()
+            
         }
     }
     
-    func nextQuestionButtonActionFunction() {
-        let quiz = QuizObject(dictionaryArry: DictionaryArray)
-        self.classSizeQuiz = quiz
+    func questionActionFunction() {
         
-        self.questionText.text = quiz.questionArray[questionUserIsOnCount].objectQuestionText
-        self.answerOneText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[0]
-        self.answerTwoText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[1]
-        self.answerThreeText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[2]
-        self.answerFourText.text = quiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[3]
+        self.questionText.text = classQuiz.questionArray[questionUserIsOnCount].objectQuestionText
+        self.answerOneText.text = classQuiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[0]
+        self.answerTwoText.text = classQuiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[1]
+        self.answerThreeText.text = classQuiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[2]
+        self.answerFourText.text = classQuiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[3]
         
-        if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Animate" {
+        if classQuiz.questionArray[questionUserIsOnCount].QuizQuestionsOneThroughFour[0] == "Animate" || classQuiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Inanimate" {
             self.answerThreeButton.alpha = 0.0
             self.answerFourButton.alpha = 0.0
             self.answerFourText.alpha = 0.0
             self.answerThreeText.alpha = 0.0
         }
-        else if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Inanimate" {
-            self.answerThreeButton.alpha = 0.0
-            self.answerFourButton.alpha = 0.0
-            self.answerThreeText.alpha = 0.0
-            self.answerFourText.alpha = 0.0
-        }
+//        else if quiz.questionArray[1].QuizQuestionsOneThroughFour[0] == "Inanimate" {
+//            self.answerThreeButton.alpha = 0.0
+//            self.answerFourButton.alpha = 0.0
+//            self.answerThreeText.alpha = 0.0
+//            self.answerFourText.alpha = 0.0
+//        }
         else {
             self.answerThreeButton.alpha = 1.0
             self.answerFourButton.alpha = 1.0
             self.answerThreeText.alpha = 1.0
             self.answerFourText.alpha = 1.0
         }
+        self.answerOneButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        self.answerTwoButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        self.answerThreeButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        self.answerFourButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
     }
     
     func answerCheckFunction(buttonNumber: Int) {
@@ -102,42 +114,34 @@ class QuizzesViewController: UIViewController {
             
             switch buttonNumber {
             case 1:
-                self.answerOneButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                //self.answerOneButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
                 self.answerOneButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+                self.addCorrectQuestionCount()
             case 2:
-                self.answerTwoButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                //self.answerTwoButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
                 self.answerTwoButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+                self.addCorrectQuestionCount()
             case 3:
-                self.answerThreeButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                //self.answerThreeButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
                 self.answerThreeButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+                self.addCorrectQuestionCount()
             case 4:
-                self.answerFourButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                //self.answerFourButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
                 self.answerFourButton.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
+                self.addCorrectQuestionCount()
             default: break
             }
     
         })
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: {
-            switch buttonNumber {
-            case 1:
-                self.answerOneButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
-            case 2:
-                self.answerTwoButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
-            case 3:
-                self.answerThreeButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
-            case 4:
-                self.answerFourButton.transform = CGAffineTransformMakeScale(1.25, 1.25)
-            default: break }
-            }, completion:  {
-                (value: Bool) in
-                if self.answerOneButton.currentTitleColor == UIColor.greenColor() ||
-                    self.answerOneButton.currentTitleColor == UIColor.redColor() {}
-                
-        })
+    }
+    
+    func addCorrectQuestionCount() {
+        self.totalQuestionsCorrectCount += 1
+        self.totalQuestionsCorrect.text = String(self.totalQuestionsCorrectCount)
     }
     
     func correctAnswerNumber () -> Int {
-        return (classSizeQuiz.questionArray[1].correctAnswer)
+        return (classQuiz.questionArray[questionUserIsOnCount].correctAnswer)
     }
     
     
