@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             let nextViewController: ConjugationViewController = segue.destinationViewController as! ConjugationViewController
             nextViewController.DictionaryArray = self.testDictionaryArray
         case goToQuizzes:
-            let nextViewController: QuizzesViewController = segue.destinationViewController as! QuizzesViewController
+            let nextViewController: QuizzesStartPageViewController = segue.destinationViewController as! QuizzesStartPageViewController
             nextViewController.DictionaryArray = self.testDictionaryArray
         default:
             break
