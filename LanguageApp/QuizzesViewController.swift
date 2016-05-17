@@ -87,6 +87,13 @@ class QuizzesViewController: UIViewController {
             self.totalQuestionsCompletedNumber.text = String(questionUserIsOnCount + 1)
             questionActionFunction()
         }
+        else if (questionUserIsOnCount + 1) == classQuiz.totalQuizQuestionsNumber {
+            print("else if registered")
+            
+            //let nextViewController = QuizzesStartPageViewController
+            //self.navigationController?.pushViewController(nextViewController, animated: true)
+            self.performSegueWithIdentifier("unwindtoStart", sender: self)
+        }
     }
     
     func questionActionFunction() {

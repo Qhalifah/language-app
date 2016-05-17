@@ -15,6 +15,7 @@ class QuizzesStartPageViewController: UIViewController {
 
     @IBOutlet weak var quizQuestionNumberLabel: UILabel!
     
+    @IBAction func unwindtoStart(segue: UIStoryboardSegue) {}
 
     @IBAction func quizQuestionNumberIncreaseButton(sender: AnyObject) {
         let numberStringValue = Int(self.quizQuestionNumberLabel.text!)
