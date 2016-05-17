@@ -88,11 +88,10 @@ class QuizzesViewController: UIViewController {
             questionActionFunction()
         }
         else if (questionUserIsOnCount + 1) == classQuiz.totalQuizQuestionsNumber {
-            print("else if registered")
-            
-            //let nextViewController = QuizzesStartPageViewController
-            //self.navigationController?.pushViewController(nextViewController, animated: true)
-            self.performSegueWithIdentifier("unwindtoStart", sender: self)
+            //self.performSegueWithIdentifier("unwindtoStart", sender: self)
+            let returnAlert = UIAlertController(title: "Hello World", message: "I am an Alert!", preferredStyle: UIAlertControllerStyle.Alert)
+            returnAlert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(returnAlert, animated: true, completion: nil)
         }
     }
     
