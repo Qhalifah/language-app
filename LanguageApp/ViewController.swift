@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var goToQuizzes: UIButton!
     @IBOutlet weak var chartBarButton: UIBarButtonItem!
     
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {}
+    
     var testDictionaryArray: Array<DictionaryWordEntry> = []
 
     override func viewDidLoad() {

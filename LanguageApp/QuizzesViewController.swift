@@ -37,6 +37,7 @@ class QuizzesViewController: UIViewController {
     @IBOutlet weak var totalQuestionsCorrect: UILabel!
     var totalQuestionsCorrectCount = 0
     var questionUserIsOnCount: Int = 0
+    var questionAnsweredBool: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +60,12 @@ class QuizzesViewController: UIViewController {
         
         self.totalQuestionsCompletedNumber.text = String(questionUserIsOnCount + 1)
         self.totalQuestionsCorrect.text = String(totalQuestionsCorrectCount)
+        
         questionActionFunction()
         
     }
     
     @IBAction func answerOneFunction(sender: AnyObject) {
-        
         answerCheckFunction(correctAnswerNumber(), buttonNumber: 1)
     }
     
@@ -82,15 +83,45 @@ class QuizzesViewController: UIViewController {
     
     
     @IBAction func nextQuestionButtonAction(sender: AnyObject) {
+        if (questionAnsweredBool == false) {
+            let continueAlert = UIAlertController(title: "Continue without answering?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            let continueOn = UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                self.continuedNextQuestionActions()
+            }
+            let returnToQuestion = UIAlertAction(title: "Return to Question", style: UIAlertActionStyle.Cancel) {
+                UIAlertAction in
+                NSLog("Question returned to")
+            }
+            continueAlert.addAction(continueOn)
+            continueAlert.addAction(returnToQuestion)
+            self.presentViewController(continueAlert, animated: true, completion: nil)
+        }
+        else { continuedNextQuestionActions() }
+        
+    }
+    
+    func continuedNextQuestionActions() {
+        self.questionAnsweredBool = false
+        
         if (questionUserIsOnCount + 1) < classQuiz.totalQuizQuestionsNumber {
             self.questionUserIsOnCount += 1
             self.totalQuestionsCompletedNumber.text = String(questionUserIsOnCount + 1)
             questionActionFunction()
+            
         }
         else if (questionUserIsOnCount + 1) == classQuiz.totalQuizQuestionsNumber {
-            //self.performSegueWithIdentifier("unwindtoStart", sender: self)
-            let returnAlert = UIAlertController(title: "Hello World", message: "I am an Alert!", preferredStyle: UIAlertControllerStyle.Alert)
-            returnAlert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            let returnAlert = UIAlertController(title: "Your Score: \(totalQuestionsCorrectCount)/\(classQuiz.totalQuizQuestionsNumber)", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            let returnToQuiz = UIAlertAction(title: "Take Another Quiz", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                self.performSegueWithIdentifier("unwindToQuizStart", sender: self)
+            }
+            let returnToHome = UIAlertAction(title: "Home", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                self.performSegueWithIdentifier("unwindToHome", sender: self)
+            }
+            returnAlert.addAction(returnToQuiz)
+            returnAlert.addAction(returnToHome)
             self.presentViewController(returnAlert, animated: true, completion: nil)
         }
     }
@@ -130,6 +161,7 @@ class QuizzesViewController: UIViewController {
     }
     
     func answerCheckFunction(correctAnswer: Int, buttonNumber: Int) {
+        self.questionAnsweredBool = true
         
         UIView.animateWithDuration(2, animations: {
             self.answerOneButton.layer.borderColor = UIColor.redColor().CGColor
