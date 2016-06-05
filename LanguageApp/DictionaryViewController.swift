@@ -87,17 +87,50 @@ class DictionaryViewController: UIViewController {
     }
     
     func findDictionaryEntryWithEnglish(wordToFind:String) {
-        for i in DictionaryArray {
-            if i.english == wordToFind {
-                self.LabelForSavedText.text = i.ojibwe
+        
+        var highPoint = DictionaryArray.count - 1
+        var midPoint = highPoint/2
+        var reRun = false
+        
+        while (reRun == false) {
+            for i in midPoint...highPoint {
+                if ((DictionaryArray[i].english) == wordToFind) {
+                    self.LabelForSavedText.text = DictionaryArray[i].ojibwe
+                    NSLog("High Point: \(highPoint)")
+                    NSLog("Mid Point: \(midPoint)")
+                }
+                else {
+                    reRun = true
+                    highPoint = midPoint
+                    midPoint = highPoint/2
+                    NSLog("High Point: \(highPoint)")
+                    NSLog("Mid Point: \(midPoint)")
+                }
             }
         }
+
     }
     
     func findDictionaryEntryWithOjibwe(wordToFind:String) {
-        for i in DictionaryArray {
-            if i.ojibwe == wordToFind {
-                self.LabelForSavedText.text = i.english
+        
+        var highPoint = DictionaryArray.count - 1
+        var midPoint = highPoint/2
+        var reRun = false
+        
+        while (reRun == false) {
+            for i in midPoint...highPoint {
+                if ((DictionaryArray[i].ojibwe) == wordToFind) {
+                    self.LabelForSavedText.text = DictionaryArray[i].english
+                    NSLog("High Point: \(highPoint)")
+                    NSLog("Mid Point: \(midPoint)")
+                }
+                else {
+                    reRun = true
+                    highPoint = midPoint
+                    midPoint = highPoint/2
+                    NSLog("High Point: \(highPoint)")
+                    NSLog("Mid Point: \(midPoint)")
+                }
             }
         }
     }
