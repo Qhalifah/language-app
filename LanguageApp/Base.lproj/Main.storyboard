@@ -434,22 +434,6 @@
                                     <action selector="searchInDictionaryButton:" destination="744-jG-ALa" eventType="touchUpInside" id="Xfn-oi-yPs"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ob-MP-gmL" customClass="FadeOutDictionaryView" customModule="LanguageApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="555" height="698"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gq5-6U-s4D" customClass="PopUpViewController" customModule="LanguageApp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="215" width="241" height="64"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please choose a language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auc-mB-kDX">
-                                        <rect key="frame" x="8" y="21" width="225" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -457,8 +441,6 @@
                     <connections>
                         <outlet property="LabelForSavedText" destination="kgY-eX-G3t" id="XZw-dJ-XjK"/>
                         <outlet property="TextFieldInput" destination="k2O-PC-a7Q" id="5wZ-sq-Kqo"/>
-                        <outlet property="chooseLanguageErrorFadeOut" destination="2Ob-MP-gmL" id="QMx-Xm-p9y"/>
-                        <outlet property="chooseLanguageErrorPopover" destination="gq5-6U-s4D" id="cLK-Cj-qHN"/>
                         <outlet property="englishSearchButtonButton" destination="K9R-xv-H8U" id="fYZ-Yq-6Ji"/>
                         <outlet property="ojibweSearchButtonButton" destination="gJS-qq-yzg" id="JUu-dN-Kor"/>
                         <outlet property="wordToFind" destination="WOD-Td-R2I" id="APD-fS-LK8"/>

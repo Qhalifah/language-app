@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A0153D781CDA858600C75F45 /* QuizObjectAndQuestionClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0153D771CDA858600C75F45 /* QuizObjectAndQuestionClasses.swift */; };
-		A06984C61C63C5F90077D9E8 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06984C51C63C5F90077D9E8 /* PopUpViewController.swift */; };
 		A06FF9141C4800AF009E45DC /* DictionaryStoredWords.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */; };
 		A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A083355E1C46EC0200283B93 /* AppDelegate.swift */; };
 		A08335611C46EC0200283B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08335601C46EC0200283B93 /* ViewController.swift */; };
@@ -26,7 +25,6 @@
 		A0B396971C68218D00C9E9DF /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B396961C68218D00C9E9DF /* ChartsViewController.swift */; };
 		A0B3969B1C68262B00C9E9DF /* ChartsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */; };
 		A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C125981C46F8FB0025493D /* DictionaryViewController.swift */; };
-		A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		A0153D771CDA858600C75F45 /* QuizObjectAndQuestionClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizObjectAndQuestionClasses.swift; sourceTree = "<group>"; };
-		A06984C51C63C5F90077D9E8 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		A06FF9131C4800AF009E45DC /* DictionaryStoredWords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DictionaryStoredWords.plist; sourceTree = "<group>"; };
 		A08335591C46EC0200283B93 /* LanguageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A083355D1C46EC0200283B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		A0B396961C68218D00C9E9DF /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsViewController.swift; path = ../ChartsViewController.swift; sourceTree = "<group>"; };
 		A0B3969A1C68262B00C9E9DF /* ChartsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartsCollectionViewController.swift; path = ../ChartsCollectionViewController.swift; sourceTree = "<group>"; };
 		A0C125981C46F8FB0025493D /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DictionaryViewController.swift; sourceTree = "<group>"; };
-		A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeOutDictionaryView.swift; path = ../FadeOutDictionaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +104,11 @@
 				A083355E1C46EC0200283B93 /* AppDelegate.swift */,
 				A08335621C46EC0200283B93 /* Main.storyboard */,
 				A08335601C46EC0200283B93 /* ViewController.swift */,
-				A0C125981C46F8FB0025493D /* DictionaryViewController.swift */,
-				A06984C51C63C5F90077D9E8 /* PopUpViewController.swift */,
-				A0C357FA1C6543E2005D98BA /* FadeOutDictionaryView.swift */,
 				A08D2CDF1C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift */,
+				A0C125981C46F8FB0025493D /* DictionaryViewController.swift */,
+				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
 				A0153D771CDA858600C75F45 /* QuizObjectAndQuestionClasses.swift */,
 				A0B1E9CC1CD95B430033D7A6 /* QuizzesStartPageViewController.swift */,
-				A08D2CD91C49AA36006C11A0 /* QuizzesViewController.swift */,
 				A08D2CDB1C49AA44006C11A0 /* ConjugationViewController.swift */,
 				A0B396961C68218D00C9E9DF /* ChartsViewController.swift */,
 				A08941A21C68494100A407B9 /* ChartCollectionViewCell.swift */,
@@ -263,12 +257,10 @@
 				A0C125991C46F8FB0025493D /* DictionaryViewController.swift in Sources */,
 				A08335611C46EC0200283B93 /* ViewController.swift in Sources */,
 				A08D2CE01C49ADA2006C11A0 /* OjibweEnglishDictionaryClass.swift in Sources */,
-				A0C357FB1C6543E2005D98BA /* FadeOutDictionaryView.swift in Sources */,
 				A0B1E9D11CDA6F120033D7A6 /* QuizzesQuestionNumberSelectionTableViewCell.swift in Sources */,
 				A08D2CDC1C49AA44006C11A0 /* ConjugationViewController.swift in Sources */,
 				A083355F1C46EC0200283B93 /* AppDelegate.swift in Sources */,
 				A08941A31C68494100A407B9 /* ChartCollectionViewCell.swift in Sources */,
-				A06984C61C63C5F90077D9E8 /* PopUpViewController.swift in Sources */,
 				A0B1E9CF1CDA6C9B0033D7A6 /* TestTemplateTableViewController.swift in Sources */,
 				A0B3969B1C68262B00C9E9DF /* ChartsCollectionViewController.swift in Sources */,
 				A0153D781CDA858600C75F45 /* QuizObjectAndQuestionClasses.swift in Sources */,

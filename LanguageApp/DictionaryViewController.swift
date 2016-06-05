@@ -16,8 +16,6 @@ class DictionaryViewController: UIViewController {
     @IBOutlet weak var wordToFind: UITextField!
     @IBOutlet weak var englishSearchButtonButton: UIButton!
     @IBOutlet weak var ojibweSearchButtonButton: UIButton!
-    @IBOutlet weak var chooseLanguageErrorPopover: PopUpViewController!
-    @IBOutlet weak var chooseLanguageErrorFadeOut: FadeOutDictionaryView!
     
     var englishOjibweButtonPseudoBool: String = ""
     var DictionaryArray: Array<DictionaryWordEntry> = []
@@ -30,7 +28,6 @@ class DictionaryViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.englishSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
         self.ojibweSearchButtonButton.setTitle("\u{25CB}", forState: .Normal)
-        self.chooseLanguageErrorPopover.alpha = 0.0
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,23 +69,27 @@ class DictionaryViewController: UIViewController {
             case "ojibwe":
                 findDictionaryEntryWithOjibwe(wordToFind)
             default:
-                self.LabelForSavedText.text = "Switch logged default"
-                self.chooseLanguageErrorPopover.alpha = 1.0
-                self.chooseLanguageErrorFadeOut.alpha = 0.85
-            }
+                if (wordToFind == "") {
+                    let searchErrorAlertWord = UIAlertController(title: "Search Error", message: "Please Enter Word to Search", preferredStyle: UIAlertControllerStyle.Alert)
+                    searchErrorAlertWord.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.Cancel, handler: nil))
+                    self.presentViewController(searchErrorAlertWord, animated: true, completion: nil)
+                    
+
+                }
+                else {
+                    let searchErrorAlertLang = UIAlertController(title: "Search Error", message: "Please Select English or Ojibwe", preferredStyle: UIAlertControllerStyle.Alert)
+                    searchErrorAlertLang.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.Cancel, handler: nil))
+                    self.presentViewController(searchErrorAlertLang, animated: true, completion: nil)
+
+                    
+                }
+        }
     }
     
     func findDictionaryEntryWithEnglish(wordToFind:String) {
         for i in DictionaryArray {
             if i.english == wordToFind {
                 self.LabelForSavedText.text = i.ojibwe
-                /*i.english = self.currentDictionary["english"]
-                i.ojibwe = self.currentDictionary["ojibwe"]
-                i.type = self.currentDictionary["type"]
-                i.subtype = self.currentDictionary["subtype"]
-                self.currentDictionary["ojibwe"] = self.LabelForSavedText.text*/
-                
-                
             }
         }
     }
