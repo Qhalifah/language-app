@@ -10,12 +10,10 @@ import UIKit
 
 class DictionaryViewController: UIViewController {
 
-    
-    @IBOutlet weak var TextFieldInput: UITextField!
-    @IBOutlet weak var LabelForSavedText: UILabel!
     @IBOutlet weak var wordToFind: UITextField!
     @IBOutlet weak var englishSearchButtonButton: UIButton!
     @IBOutlet weak var ojibweSearchButtonButton: UIButton!
+    @IBOutlet weak var LabelForSavedText: UILabel!
     
     var englishOjibweButtonPseudoBool: String = ""
     var DictionaryArray: Array<DictionaryWordEntry> = []
@@ -33,12 +31,6 @@ class DictionaryViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func SaveEnglish(sender: UIButton) {
-        if (self.TextFieldInput != nil) {
-            self.LabelForSavedText.text = self.TextFieldInput.text;
-        }
     }
     
     @IBAction func englishSearchButton(sender: AnyObject) {
