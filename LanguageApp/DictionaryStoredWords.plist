@@ -4,6 +4,446 @@
 <array>
 	<dict>
 		<key>english</key>
+		<string>my grandmother</string>
+		<key>ojibwe</key>
+		<string>nokomis</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>my grandfather</string>
+		<key>ojibwe</key>
+		<string>nimishomis</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>my father </string>
+		<key>ojibwe</key>
+		<string>nindede</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>my mother</string>
+		<key>ojibwe</key>
+		<string>nimaamaa</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>wait</string>
+		<key>ojibwe</key>
+		<string>bekaa</string>
+		<key>type</key>
+		<string>phrase</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>see you later</string>
+		<key>ojibwe</key>
+		<string>gigawaabimin</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ai</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>i am sad</string>
+		<key>ojibwe</key>
+		<string>nigashkendam</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ai</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>I am happy</string>
+		<key>ojibwe</key>
+		<string>niminwendam</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ai</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>it is a good day</string>
+		<key>ojibwe</key>
+		<string>mino giishigad</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ii</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>minikwaajigan</string>
+		<key>ojibwe</key>
+		<string>cup || water bottle</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>chair</string>
+		<key>ojibwe</key>
+		<string>apabiwin</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>table</string>
+		<key>ojibwe</key>
+		<string>adoopowin</string>
+		<key>type</key>
+		<string>noun </string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>door</string>
+		<key>ojibwe</key>
+		<string>ishkwaandem</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>ceiling</string>
+		<key>ojibwe</key>
+		<string>ishpimisag</string>
+		<key>type</key>
+		<string>noun </string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>floor</string>
+		<key>ojibwe</key>
+		<string>michisag</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>window</string>
+		<key>ojibwe</key>
+		<string>waasechigan</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>wall</string>
+		<key>ojibwe</key>
+		<string>aasamisag</string>
+		<key>type</key>
+		<string>noun </string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>mazina&apos;igan</string>
+		<key>ojibwe</key>
+		<string>paper || book</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>scissors</string>
+		<key>ojibwe</key>
+		<string>moozhwaagan</string>
+		<key>type</key>
+		<string>noun </string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>pencil</string>
+		<key>ojibwe</key>
+		<string>ozhibii&apos;iganaatig</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>inani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>10 || ten</string>
+		<key>ojibwe</key>
+		<string>midaaswi</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>9 || nine</string>
+		<key>ojibwe</key>
+		<string>zhaangaswi</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>8 || eight</string>
+		<key>ojibwe</key>
+		<string>ishwaaswi</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>7 || seven</string>
+		<key>ojibwe</key>
+		<string>niizhwaaswi</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>6 || six</string>
+		<key>ojibwe</key>
+		<string>ningodwaaswi</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>5 || five</string>
+		<key>ojibwe</key>
+		<string>naanan</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>4 || four</string>
+		<key>ojibwe</key>
+		<string>niiwin</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>3 || three</string>
+		<key>ojibwe</key>
+		<string>niswi</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>2 || two</string>
+		<key>ojibwe</key>
+		<string>niizh</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>1 || one</string>
+		<key>ojibwe</key>
+		<string>bezhig</string>
+		<key>type</key>
+		<string>number</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>*blank* is my clan</string>
+		<key>ojibwe</key>
+		<string>Nindodem</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ai</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>I am from</string>
+		<key>ojibwe</key>
+		<string>nindoonjibaa</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ai</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>my name is</string>
+		<key>ojibwe</key>
+		<string>nindizhinikaz</string>
+		<key>type</key>
+		<string>verb</string>
+		<key>subtype</key>
+		<string>ai</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>now</string>
+		<key>ojibwe</key>
+		<string>noongom</string>
+		<key>type</key>
+		<string>time</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>close by</string>
+		<key>ojibwe</key>
+		<string>besho</string>
+		<key>type</key>
+		<string>other</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>far away</string>
+		<key>ojibwe</key>
+		<string>waasa</string>
+		<key>type</key>
+		<string>other</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>way over there</string>
+		<key>ojibwe</key>
+		<string>awidi</string>
+		<key>type</key>
+		<string>other</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>there</string>
+		<key>ojibwe</key>
+		<string>imaa</string>
+		<key>type</key>
+		<string>other</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>here</string>
+		<key>ojibwe</key>
+		<string>omaa</string>
+		<key>type</key>
+		<string>other</string>
+		<key>subtype</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>why</string>
+		<key>ojibwe</key>
+		<string>aaniin dash</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>when</string>
+		<key>ojibwe</key>
+		<string>aaniin apii</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>where</string>
+		<key>ojibwe</key>
+		<string>aaniindi</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>what</string>
+		<key>ojibwe</key>
+		<string>awegonen</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string>who</string>
+		<key>ojibwe</key>
+		<string>awenen</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
 		<string>those</string>
 		<key>ojibwe</key>
 		<string>iniw</string>
@@ -167,6 +607,16 @@
 		<string>bear</string>
 		<key>ojibwe</key>
 		<string>makwa</string>
+		<key>type</key>
+		<string>noun</string>
+		<key>subtype</key>
+		<string>ani</string>
+	</dict>
+	<dict>
+		<key>english</key>
+		<string></string>
+		<key>ojibwe</key>
+		<string></string>
 		<key>type</key>
 		<string>noun</string>
 		<key>subtype</key>
