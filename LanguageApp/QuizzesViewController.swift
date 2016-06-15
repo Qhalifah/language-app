@@ -163,7 +163,7 @@ class QuizzesViewController: UIViewController {
     func answerCheckFunction(correctAnswer: Int, buttonNumber: Int) {
         self.questionAnsweredBool = true
         
-        UIView.animateWithDuration(2, animations: {
+        UIView.animateWithDuration(10, animations: {
             self.answerOneButton.layer.borderColor = UIColor.redColor().CGColor
             self.answerTwoButton.layer.borderColor = UIColor.redColor().CGColor
             self.answerThreeButton.layer.borderColor = UIColor.redColor().CGColor

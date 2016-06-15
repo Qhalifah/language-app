@@ -70,7 +70,10 @@ class QuizQuestion: NSObject {
         
     }
     func questionAssignment(i:DictionaryWordEntry, j:Array<DictionaryWordEntry>) {
-        randomInt = arc4random_uniform(UInt32(3))
+        if i.type != "english" || i.type != "ojibwe" {
+            randomInt = arc4random_uniform(UInt32(2))
+        }
+        else { randomInt = arc4random_uniform(UInt32(3)) }
         switch randomInt {
         case 0:
             selectDWEntryEnglishText(i, j: j)

@@ -420,6 +420,15 @@
                                     <action selector="searchInDictionaryButton:" destination="744-jG-ALa" eventType="touchUpInside" id="Xfn-oi-yPs"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvL-ag-F3r">
+                                <rect key="frame" x="8" y="264" width="304" height="296"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5Q-QJ-1pY">
+                                <rect key="frame" x="8" y="235" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -428,6 +437,8 @@
                         <outlet property="LabelForSavedText" destination="xgm-DS-HVd" id="qD6-iU-mkW"/>
                         <outlet property="englishSearchButtonButton" destination="K9R-xv-H8U" id="fYZ-Yq-6Ji"/>
                         <outlet property="ojibweSearchButtonButton" destination="gJS-qq-yzg" id="JUu-dN-Kor"/>
+                        <outlet property="resultsLabel" destination="L5Q-QJ-1pY" id="x3y-v9-7jr"/>
+                        <outlet property="scrollView" destination="UvL-ag-F3r" id="CQg-3S-GPx"/>
                         <outlet property="wordToFind" destination="WOD-Td-R2I" id="APD-fS-LK8"/>
                     </connections>
                 </viewController>
